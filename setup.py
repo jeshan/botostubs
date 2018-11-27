@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="botostubs",
-    version="0.0.1",
+    version="0.2",
     author="Jeshan G. BABOOA",
     author_email="j@jeshan.co",
     description="Stubs for boto3, the AWS SDK for python",
@@ -15,7 +15,8 @@ setuptools.setup(
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: BSD-2-Clause License",
+        "Programming Language :: Python :: 3.5",
+        "License :: OSI Approved :: BSD License",
         "Operating System :: OS Independent",
     ],
 )
