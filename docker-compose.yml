@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  python:
+    build:
+      context: .
+      args:
+        TARGET_VERSION: 3.5
