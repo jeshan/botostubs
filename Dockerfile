@@ -6,13 +6,13 @@ ENV AWS_ACCESS_KEY_ID=FAKE AWS_SECRET_ACCESS_KEY=FAKE AWS_DEFAULT_REGION=us-east
 
 WORKDIR /app
 
-RUN pip install pytest boto3 setuptools wheel twine
+RUN pip install pytest boto3 setuptools wheel twine awscli
 
 COPY main.py pythonic.py ./
-COPY setup.py README.md botostubs/
+COPY setup.py README.md release.sh botostubs/
 
 RUN mkdir botostubs/botostubs
 RUN time python main.py > botostubs/botostubs/__init__.py
 
 WORKDIR /app/botostubs
-CMD python setup.py sdist bdist_wheel && cp -r dist /custom && twine upload dist/*
+CMD ./release.sh
