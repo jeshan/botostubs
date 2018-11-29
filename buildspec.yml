@@ -7,4 +7,4 @@ phases:
       - mkdir -p botostubs/botostubs
       - cp setup.py README.md botostubs/
       - export AWS_ACCESS_KEY_ID=FAKE AWS_SECRET_ACCESS_KEY=FAKE && python main.py > botostubs/botostubs/__init__.py
-      - release.sh
+      - ./release.sh
