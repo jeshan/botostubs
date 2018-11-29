@@ -1,3 +1,4 @@
+[![PyPI version](https://badge.fury.io/py/botostubs.svg)](https://badge.fury.io/py/botostubs)
 
 ![Build badge](https://codebuild.us-east-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiUzdpbkQ3WHQxTkVWVWhvQ2tZVGVZMUJNcC9KYzFQZGFYOGtuOXVmc0tTdkYwNWlEM3dCNjQwSkZqTlhZZWVxZGk3V1l6VFdwU3piSlQxaHArUmJkdTFjPSIsIml2UGFyYW1ldGVyU3BlYyI6InFMQjZObmxqQWJ0ZXpVUHoiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=master)
 
