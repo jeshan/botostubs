@@ -1,5 +1,10 @@
 version: 0.2
 
+env:
+  parameter-store:
+    TWINE_USERNAME: /CodeBuild/pypi-user
+    TWINE_PASSWORD: /CodeBuild/pypi-password
+
 phases:
   build:
     commands:
