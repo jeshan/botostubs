@@ -1,6 +1,6 @@
 ARG TARGET_VERSION
 
-FROM python:3.7-alpine
+FROM python:3.6-alpine
 
 ENV AWS_DEFAULT_REGION=us-east-1
 

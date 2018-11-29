@@ -3,5 +3,8 @@ version: 0.2
 phases:
   build:
     commands:
-      - docker build -t botostubs .
-      - docker run -e AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID} -e AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY} -e AWS_SESSION_TOKEN=${AWS_SESSION_TOKEN} botostubs
+      - pip install pytest boto3 setuptools wheel twine
+      - cp setup.py README.md release.sh botostubs/
+      - mkdir botostubs/botostubs
+      - export AWS_ACCESS_KEY_ID=FAKE AWS_SECRET_ACCESS_KEY=FAKE && time python main.py > botostubs/botostubs/__init__.py
+      - /app/botostubs/release.sh
