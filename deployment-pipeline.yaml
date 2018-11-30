@@ -1,0 +1,158 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'Deployment pipeline for botostubs'
+
+Parameters:
+  EmailAddress:
+    Type: String
+  PyPiUser:
+    Type: String
+  PyPiPassword:
+    Type: String
+    NoEcho: true
+  GithubRepo:
+    Type: String
+    Default: https://github.com/jeshan/botostubs
+
+Resources:
+  TriggerBuildRule:
+    DependsOn: BuildEventRoleManagedPolicy
+    Properties:
+      ScheduleExpression: cron(0 0 1/3 * ? *) # every 3 days
+      State: ENABLED
+      Targets:
+        - Arn: !GetAtt 'Project.Arn'
+          Id: some-id
+          RoleArn: !Sub '${BuildEventRole.Arn}'
+    Type: AWS::Events::Rule
+
+  NotificationRule:
+    Properties:
+      EventPattern: '{"source":["aws.codebuild"],"detail-type":["CodeBuild Build State Change"],"detail":{"build-status":["FAILED","STOPPED","SUCCEEDED"],"project-name":["botostubs-release"]}}'
+      State: ENABLED
+      Targets:
+        - Arn: !Ref 'Topic'
+          Id: some-id
+    Type: AWS::Events::Rule
+
+  Topic:
+    Type: AWS::SNS::Topic
+
+  EmailSubscription:
+    Properties:
+      Endpoint: !Ref EmailAddress
+      Protocol: email
+      Region: !Ref 'AWS::Region'
+      TopicArn: !Ref 'Topic'
+    Type: AWS::SNS::Subscription
+
+  Project:
+    Properties:
+      Artifacts:
+        Type: NO_ARTIFACTS
+      BadgeEnabled: true
+      Cache:
+        Type: NO_CACHE
+      Description: Check for boto3 releases and release a new PyPI package based on it
+      EncryptionKey: !Sub 'arn:aws:kms:${AWS::Region}:${AWS::AccountId}:alias/aws/s3'
+      Environment:
+        ComputeType: BUILD_GENERAL1_SMALL
+        Image: aws/codebuild/python:3.6.5
+        PrivilegedMode: true
+        Type: LINUX_CONTAINER
+      Name: botostubs-release
+      ServiceRole: !GetAtt 'CodeBuildServiceRole.Arn'
+      Source:
+        GitCloneDepth: 1
+        InsecureSsl: false
+        Location: !Ref GithubRepo
+        ReportBuildStatus: false
+        Type: GITHUB
+      TimeoutInMinutes: 15
+    Type: AWS::CodeBuild::Project
+
+  Username:
+    Properties:
+      Name: /CodeBuild/pypi-user
+      Type: String
+      Value: !Ref PyPiUser
+    Type: AWS::SSM::Parameter
+
+  Password:
+    Properties:
+      Name: /CodeBuild/pypi-password
+      Type: String # cfn does not support creating secure parameter yet
+      Value: !Ref PyPiPassword
+    Type: AWS::SSM::Parameter
+
+  BuildEventRole:
+    Properties:
+      AssumeRolePolicyDocument:
+        Statement:
+          - Action: sts:AssumeRole
+            Effect: Allow
+            Principal:
+              Service: events.amazonaws.com
+        Version: '2012-10-17'
+      ManagedPolicyArns:
+        - !Ref 'BuildEventRoleManagedPolicy'
+      Path: /service-role/
+      RoleName: botostubs-build-event-role
+    Type: AWS::IAM::Role
+
+  BuildEventRoleManagedPolicy:
+    Properties:
+      Path: /service-role/
+      PolicyDocument:
+        Statement:
+          - Action:
+              - codebuild:StartBuild
+            Effect: Allow
+            Resource:
+              - !GetAtt 'Project.Arn'
+        Version: '2012-10-17'
+    Type: AWS::IAM::ManagedPolicy
+
+  CodeBuildServiceRole:
+    Properties:
+      AssumeRolePolicyDocument:
+        Statement:
+          - Action: sts:AssumeRole
+            Effect: Allow
+            Principal:
+              Service: codebuild.amazonaws.com
+        Version: '2012-10-17'
+      ManagedPolicyArns: # if getting policy not attachable, deploy this in a second step
+        - !Ref 'LogManagedPolicy'
+        - !Ref 'SsmManagedPolicy'
+      Path: /service-role/
+    Type: AWS::IAM::Role
+
+  LogManagedPolicy:
+    Properties:
+      Description: Policy used in trust relationship with CodeBuild
+      Path: /service-role/
+      PolicyDocument:
+        Statement:
+          - Action:
+              - logs:CreateLogGroup
+              - logs:CreateLogStream
+              - logs:PutLogEvents
+            Effect: Allow
+            Resource:
+              - !Sub 'arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/codebuild/botostubs-release'
+              - !Sub 'arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/codebuild/botostubs-release:*'
+        Version: '2012-10-17'
+    Type: AWS::IAM::ManagedPolicy
+
+  SsmManagedPolicy:
+    Properties:
+      Description: Policy used in trust relationship with CodeBuild
+      Path: /service-role/
+      PolicyDocument:
+        Statement:
+          - Action:
+              - ssm:GetParameters
+            Effect: Allow
+            Resource: !Sub 'arn:aws:ssm:${AWS::Region}:${AWS::AccountId}:parameter/CodeBuild/*'
+        Version: '2012-10-17'
+    Type: AWS::IAM::ManagedPolicy
