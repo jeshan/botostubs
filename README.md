@@ -8,7 +8,7 @@ Gives you code assistance for **any boto3 API** in any IDE. Get started by runni
 
 
 # Demo
-![See demo gif on github](intro-demo.gif)
+![See demo gif on github](https://raw.githubusercontent.com/jeshan/botostubs/master/intro-demo.gif)
 
 
 # Features
