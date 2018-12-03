@@ -9,7 +9,7 @@ setuptools.setup(
     version="0.4." + boto3.__version__,
     author="Jeshan G. BABOOA",
     author_email="j@jeshan.co",
-    description="Stubs for boto3, the AWS SDK for python",
+    description="boto3 code assistance for any API in any IDE, always up to date",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/jeshan/botostubs",
