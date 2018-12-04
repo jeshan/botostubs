@@ -37,6 +37,40 @@ Resources:
   Topic:
     Type: AWS::SNS::Topic
 
+  TopicPolicy:
+    Properties:
+      PolicyDocument:
+        Id: __default_policy_ID
+        Statement:
+          - Action:
+              - SNS:GetTopicAttributes
+              - SNS:SetTopicAttributes
+              - SNS:AddPermission
+              - SNS:RemovePermission
+              - SNS:DeleteTopic
+              - SNS:Subscribe
+              - SNS:ListSubscriptionsByTopic
+              - SNS:Publish
+              - SNS:Receive
+            Condition:
+              StringEquals:
+                AWS:SourceOwner: !Ref AWS::AccountId
+            Effect: Allow
+            Principal:
+              AWS: '*'
+            Resource: !Ref 'Topic'
+            Sid: __default_statement_ID
+          - Action: sns:Publish
+            Effect: Allow
+            Principal:
+              Service: events.amazonaws.com
+            Resource: !Ref 'Topic'
+            Sid: AWSEvents_botostubs-release-notification_Id14799589213970
+        Version: '2012-10-17'
+      Topics:
+        - !Ref 'Topic'
+    Type: AWS::SNS::TopicPolicy
+
   EmailSubscription:
     Properties:
       Endpoint: !Ref EmailAddress
