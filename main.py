@@ -104,13 +104,10 @@ def get_class_output(client_name):
 
 if __name__ == '__main__':
 
-    boto3.setup_default_session()
-
-    resource = boto3.resource('s3')
-
     print('from collections.abc import Mapping')
     print('from typing import List')
     print('from botocore.client import BaseClient\n\n')
 
+    boto3.setup_default_session()
     for client_name in boto3.DEFAULT_SESSION.get_available_services():
         print(get_class_output(client_name))
