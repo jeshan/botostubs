@@ -1,5 +1,9 @@
 [![PyPI version](https://badge.fury.io/py/botostubs.svg)](https://badge.fury.io/py/botostubs)
 
+[![Downloads](https://pepy.tech/badge/botostubs)](https://pepy.tech/project/botostubs)
+[![Downloads](https://pepy.tech/badge/botostubs/month)](https://pepy.tech/project/botostubs)
+[![Downloads](https://pepy.tech/badge/botostubs/week)](https://pepy.tech/project/botostubs)
+
 ![Build badge](https://codebuild.us-east-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiUkF6bllTcVBkQmI2Y0FWZlpDUTRHc3pyVm5EUk11ZWdDV1BtcVAyZG80TCtJZFZUdnB1ZmFwRVN3UWxudUJxMTRTTW15R1dnUy9KZFZuZE1Fd3c1b1RjPSIsIml2UGFyYW1ldGVyU3BlYyI6IlNZa3Q2aHRjWjVYVzQ0clkiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=master)
 
 
