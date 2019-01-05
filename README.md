@@ -25,6 +25,8 @@ We look for all boto3 clients by running boto itself. Then loop over each of the
 
 The deployment pipeline on AWS checks for boto3 releases every 3 days, installs it, generate new stubs and pushes them to PyPI. Looking for a new API released a few days ago? Just upgrade the package with `pip install --upgrade botostubs` and you're good to go.
 
+For an in-depth account, see the blog post [Code assistance for boto3, always up to date and in any IDE](https://www.awsadvent.com/2018/12/21/code-assistance-for-boto3-always-up-to-date-and-in-any-ide/)
+
 # TODO
 Support python versions before 3.5. Currently requires at least 3.5 due to use of type hints.
 
