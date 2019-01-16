@@ -1,3 +1,4 @@
+![](https://img.shields.io/badge/programmer-laziness-green.svg)
 [![PyPI version](https://badge.fury.io/py/botostubs.svg)](https://badge.fury.io/py/botostubs)
 
 [![Downloads](https://pepy.tech/badge/botostubs)](https://pepy.tech/project/botostubs)
