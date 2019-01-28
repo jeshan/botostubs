@@ -28,6 +28,9 @@ The deployment pipeline on AWS checks for boto3 releases every 3 days, installs 
 
 For an in-depth account, see the blog post [Code assistance for boto3, always up to date and in any IDE](https://www.awsadvent.com/2018/12/21/code-assistance-for-boto3-always-up-to-date-and-in-any-ide/)
 
+# Notes
+- This package requires that your IDE already supports getting type hints from PyPI packages. It has been tested with Intellij and Visual Studio Code.
+
 # TODO
 Support python versions before 3.5. Currently requires at least 3.5 due to use of type hints.
 
