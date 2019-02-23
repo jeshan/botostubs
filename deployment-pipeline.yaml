@@ -12,6 +12,9 @@ Parameters:
   GithubRepo:
     Type: String
     Default: https://github.com/jeshan/botostubs
+  GithubToken:
+    Type: String
+    NoEcho: true
 
 Resources:
   TriggerBuildRule:
@@ -116,6 +119,13 @@ Resources:
       Name: /CodeBuild/pypi-password
       Type: String # cfn does not support creating secure parameter yet
       Value: !Ref PyPiPassword
+    Type: AWS::SSM::Parameter
+
+  GithubPassword:
+    Properties:
+      Name: /CodeBuild/GITHUB_TOKEN
+      Type: String # cfn does not support creating secure parameter yet
+      Value: !Ref GithubToken
     Type: AWS::SSM::Parameter
 
   BuildEventRole:

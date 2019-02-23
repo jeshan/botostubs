@@ -4,3 +4,4 @@ parameters:
   EmailAddress: {{var.email_address}}
   PyPiUser: {{var.pypi_user}}
   PyPiPassword: {{var.pypi_password}}
+  GithubToken: {{var.github_token}}

@@ -1,3 +1,5 @@
+import os
+
 import boto3
 import setuptools
 
@@ -6,7 +8,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="botostubs",
-    version="0.4." + boto3.__version__,
+    version=os.environ['CODE_VERSION'] + "." + boto3.__version__,
     author="Jeshan G. BABOOA",
     author_email="j@jeshan.co",
     description="boto3 code assistance for any API in any IDE, always up to date",
