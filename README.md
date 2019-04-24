@@ -19,6 +19,7 @@ Gives you code assistance for **any boto3 API** in any IDE. Get started by runni
 # Features
 - PyPI package automatically aligned with boto3 (yay!)
 - show required / optional fields
+- show API docs as Python docstrings
 - full api coverage
 
 # How it works
