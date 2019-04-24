@@ -6,7 +6,7 @@ env:
     TWINE_PASSWORD: /CodeBuild/pypi-password
     GITHUB_TOKEN: /CodeBuild/GITHUB_TOKEN
   variables:
-    CODE_VERSION: 0.4
+    CODE_VERSION: 0.5
 
 phases:
   build:
