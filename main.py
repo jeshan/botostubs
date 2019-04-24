@@ -26,10 +26,44 @@ def get_method_signature(service_model, operation_name, shapes, class_name):
 
     param_str = ', '.join(param_list)
 
+    operation_doc = operation_model.documentation.replace('<p>', '').replace('</p>', '')
+    docstr = f'"""{operation_doc}\n'
     append_return_type = ' -> ' + output_shape.name if output_shape else ''
+    rest_params = f":param {get_doc_str(input_shape)}"
 
     return f"""    def {pythonic_op_name}({param_str}){append_return_type}:
+        {docstr}
+        :param self:
+        {rest_params}
+        :return: {get_doc_str(output_shape)}        \"\"\"
         pass"""
+
+
+def get_doc_str(shape, prefix='', level=1):
+    docstr = ''
+    if not shape or not hasattr(shape, 'members') or not shape.members.items():
+        return docstr
+    if level > 3:
+        return
+    indent = "&nbsp;&nbsp;&nbsp;&nbsp;" * level
+    for param_key, param_value in shape.members.items():
+        doc = param_value.documentation.replace('"""', 'triple-quotes').replace('<p>', '').replace('</p>', '')
+        if hasattr(param_value, 'members'):
+            if level == 1:
+                doc += ':'
+            if level > 1:
+                doc += f"""{indent}<b>{param_key}</b>: {doc}"""
+
+            sub_result = get_doc_str(param_value, indent, level + 1)
+            if not sub_result:
+                docstr += doc
+                break
+            docstr += sub_result
+        if level == 1:
+            docstr = f"""{param_key}: {prefix} {doc}<br/>{docstr}"""
+        else:
+            docstr = f"""{prefix} <i>{param_key}</i> {doc}<br/>{docstr}"""
+    return docstr
 
 
 def get_param_list(input_shape, parameters, primitive_map, shapes, class_name):
