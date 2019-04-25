@@ -31,6 +31,7 @@ For an in-depth account, see the blog post [Code assistance for boto3, always up
 
 # Notes
 - This package requires that your IDE already supports getting type hints from PyPI packages. It has been tested with Intellij and Visual Studio Code.
+- For other IDEs, you may have some luck by installing [jedi](https://github.com/davidhalter/jedi), which provides code completion for Vim, Emacs, Sublime, Atom, etc.
 
 # TODO
 Support python versions before 3.5. Currently requires at least 3.5 due to use of type hints.
