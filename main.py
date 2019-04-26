@@ -102,7 +102,7 @@ def get_param_name(shape, name, param, primitive_map, shapes, class_name):
     return item
 
 
-def get_class_signature(name, methods, shapes_in_classes):
+def get_class_signature(name, documentation, methods, shapes_in_classes):
     method_str = '\n\n'.join(methods)
     shape_str = []
 
@@ -117,8 +117,11 @@ def get_class_signature(name, methods, shapes_in_classes):
 """)
 
     shape_str = '\n'.join(shape_str)
+    doc_str = f'    """{documentation}"""'.replace('<p>', '').replace('</p>', '')
 
     return f"""class {name}(BaseClient):
+{doc_str}
+
 {shape_str}
 {method_str}
 
@@ -133,7 +136,7 @@ def get_class_output(client_name):
     service_model = client._service_model
     for name in service_model.operation_names:
         method_signatures.append(get_method_signature(service_model, name, shapes_in_classes, class_name))
-    return get_class_signature(class_name, method_signatures, shapes_in_classes)
+    return get_class_signature(class_name, service_model.documentation, method_signatures, shapes_in_classes)
 
 
 if __name__ == '__main__':
