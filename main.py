@@ -102,9 +102,10 @@ def get_param_name(shape, name, param, shapes, class_name):
     return item
 
 
-def get_class_signature(name, documentation, methods, shapes_in_classes):
+def get_class_signature(client_name, name, documentation, methods, shapes_in_classes):
     method_str = '\n\n'.join(methods)
     shape_str = get_shape_str(name, shapes_in_classes)
+    resource_str = print_resource(client_name)
     doc_str = f'    """{documentation}"""'.replace('<p>', '').replace('</p>', '')
 
     return f"""class {name}(BaseClient):
@@ -113,6 +114,7 @@ def get_class_signature(name, documentation, methods, shapes_in_classes):
 {shape_str}
 {method_str}
 
+{resource_str}
 """
 
 
@@ -130,6 +132,115 @@ def get_shape_str(name, shapes_in_classes):
     return '\n'.join(shape_str)
 
 
+def print_resource(resource_name):
+    result = f'    class {resource_name.title()}Resource:\n'
+    try:
+        resource = boto3.resource(resource_name)
+    except boto3.exceptions.ResourceNotExistsError:
+        return ''
+    for sub_resource in resource.meta.resource_model.subresources:
+        result += print_sub_resource(resource_name, resource, sub_resource)
+    result += print_actions(resource.meta.resource_model.actions)
+    result += print_collections(resource)
+    result += '\n\n'
+    return result
+
+
+def print_sub_waiters(resource):
+    waiters = resource.resource.model.waiters
+    result = ''
+    for waiter in waiters:
+        result += f"""            def {waiter.name}(self):
+                pass
+
+"""
+    return result
+
+
+def print_collections(resource):
+    result = ''
+    for collection in resource.meta.resource_model.collections:
+        result += f"""        class {collection.resource.type}ResourceCollection(List[{collection.resource.type}], ResourceCollection):
+            pass
+
+"""
+        result += f"""        {collection.name}: {collection.resource.type}ResourceCollection = None
+"""
+    return result
+
+
+def print_sub_resource(resource_name, resource, sub_resource):
+    def get_shape_str(name, shapes_in_classes):
+        shape_str = []
+
+        for shape_class in shapes_in_classes:
+            if shape_class[1] != name:
+                continue
+            base_type = 'Mapping' if shape_class[0].type_name == 'structure' else 'object'
+            shape_str.append(f"""            class {shape_class[0].name}({base_type}):
+                pass
+""")
+
+        return '\n'.join(set(shape_str))
+
+    service_model = resource.meta.client.meta.service_model  # sub_resource.resource.meta.client.meta.service_model
+    attr = getattr(resource, sub_resource.name)
+
+    params = []
+    shape_classes = []
+    for identifier in sub_resource.resource.identifiers:
+        params.append(pythonic.xform_name(identifier.target))
+
+    model_shape = sub_resource.resource.model.shape
+    attributes_doc = '\n            '
+    if model_shape:
+        shape = service_model.shape_for(model_shape)
+        attributes = resource.meta.resource_model.get_attributes(shape)
+        for key, value in attributes.items():
+            type_shape = value[1]
+            attributes_doc += get_param_name(type_shape, key, type_shape, shape_classes, resource_name) + f"""
+            """
+    resource_doc = f'"""{inspect.getdoc(attr)}"""'
+    params_str = ''
+    if len(params):
+        params_str = ', ' + ', '.join(params)
+    return f"""        global {sub_resource.name}
+
+        class {sub_resource.name}:
+            {resource_doc}
+
+            def __init__(self{params_str}):
+                pass
+            
+{get_shape_str(resource_name, shape_classes)}        {attributes_doc}
+{print_sub_waiters(sub_resource)}{print_sub_actions(sub_resource.resource.model.actions)}
+"""
+
+
+def print_actions(actions):
+    result = ''
+    for action in actions:
+        result += f"""        def {action.name}(self) -> {action.resource.type if action.resource else 'dict'}:
+            pass
+
+"""
+    result += f"""        def get_available_subresources(self) -> List[str]:
+            pass
+
+"""
+    return result
+
+
+def print_sub_actions(actions):
+    result = ''
+    for action in actions:
+        result += f"""            def {action.name}(self) -> {action.resource.type if action.resource else 'dict'}:
+                return {action.resource.type + '()' if action.resource else '{}'}
+
+"""
+    return result
+
+
 def get_class_output(client_name):
     method_signatures = []
     shapes_in_classes = []
@@ -138,12 +249,14 @@ def get_class_output(client_name):
     service_model = client._service_model
     for name in service_model.operation_names:
         method_signatures.append(get_method_signature(service_model, name, shapes_in_classes, class_name))
-    return get_class_signature(class_name, service_model.documentation, method_signatures, shapes_in_classes)
+    return get_class_signature(client_name, class_name, service_model.documentation, method_signatures,
+                               shapes_in_classes)
 
 
 def print_header():
     print('from collections.abc import Mapping')
     print('from typing import List')
+    print('from boto3.resources.collection import ResourceCollection')
     print('from botocore.client import BaseClient\n\n')
 
 
