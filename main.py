@@ -300,6 +300,7 @@ def get_class_output(client_name):
 def print_header():
     print('from collections.abc import Mapping')
     print('from typing import List')
+    print('global KeyPairInfo')
     print('from boto3.resources.collection import ResourceCollection')
     print('from botocore.waiter import Waiter')
     print('from botocore.paginate import Paginator')
