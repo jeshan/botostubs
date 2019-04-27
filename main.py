@@ -198,7 +198,10 @@ def print_sub_waiters(resource):
 def print_collections(resource):
     result = ''
     for collection in resource.meta.resource_model.collections:
-        result += f"""        class {collection.resource.type}ResourceCollection(List[dict], ResourceCollection):
+        item_type = collection.resource.type
+        if resource.meta.service_name == 'ec2' and item_type == 'KeyPairInfo':
+            item_type = 'KeyPair'
+        result += f"""        class {collection.resource.type}ResourceCollection(List[{item_type}], ResourceCollection):
             pass
 
 """
