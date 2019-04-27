@@ -1,6 +1,9 @@
 import keyword
 
 import boto3
+import botocore
+from botocore.waiter import WaiterModel
+import inspect
 
 import pythonic
 
@@ -102,15 +105,19 @@ def get_param_name(shape, name, param, shapes, class_name):
     return item
 
 
-def get_class_signature(client_name, name, documentation, methods, shapes_in_classes):
+def get_class_signature(client_name, name, documentation, methods, shapes_in_classes, waiter_model, paginator_model):
     method_str = '\n\n'.join(methods)
     shape_str = get_shape_str(name, shapes_in_classes)
     resource_str = print_resource(client_name)
     doc_str = f'    """{documentation}"""'.replace('<p>', '').replace('</p>', '')
+    waiter_str = get_waiter_str(waiter_model)
+    paginator_str = get_paginator_str(paginator_model)
 
     return f"""class {name}(BaseClient):
 {doc_str}
 
+{waiter_str}
+{paginator_str}
 {shape_str}
 {method_str}
 
@@ -130,6 +137,37 @@ def get_shape_str(name, shapes_in_classes):
     """)
 
     return '\n'.join(shape_str)
+
+
+def get_waiter_str(waiter_model):
+    value = ''
+    if not waiter_model:
+        return value
+    for name in waiter_model.waiter_names:
+        waiter = waiter_model.get_waiter(name)
+        wait_docstr = f'"""see function `{pythonic.xform_name(waiter.operation)}` for valid parameters"""'
+        value += f"""    class {name}Waiter(Waiter):
+        def wait(self, **kwargs):
+            {wait_docstr}
+            pass
+"""
+    value += '\n'
+    return value
+
+
+def get_paginator_str(paginator_model):
+    value = ''
+    if not paginator_model:
+        return value
+    for name, paginator in paginator_model._paginator_config.items():
+        wait_docstr = f'"""see function `{pythonic.xform_name(name)}` for valid parameters"""'
+        value += f"""    class {name}Paginator(Paginator):
+        def wait(self, **kwargs):
+            {wait_docstr}
+            pass
+"""
+    value += '\n'
+    return value
 
 
 def print_resource(resource_name):
@@ -247,16 +285,24 @@ def get_class_output(client_name):
     client = boto3.client(client_name)
     class_name = type(client).__name__
     service_model = client._service_model
+    waiter_config = client._get_waiter_config()
+    waiter_model = WaiterModel(waiter_config) if 'waiters' in waiter_config else None
+    try:
+        paginator_model = botocore.session.get_session().get_paginator_model(client_name)
+    except botocore.exceptions.UnknownServiceError:
+        paginator_model = None # meaning it probably doesn't have paginators
     for name in service_model.operation_names:
         method_signatures.append(get_method_signature(service_model, name, shapes_in_classes, class_name))
     return get_class_signature(client_name, class_name, service_model.documentation, method_signatures,
-                               shapes_in_classes)
+                               shapes_in_classes, waiter_model, paginator_model)
 
 
 def print_header():
     print('from collections.abc import Mapping')
     print('from typing import List')
     print('from boto3.resources.collection import ResourceCollection')
+    print('from botocore.waiter import Waiter')
+    print('from botocore.paginate import Paginator')
     print('from botocore.client import BaseClient\n\n')
 
 
