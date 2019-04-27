@@ -4,6 +4,11 @@ import boto3
 
 import pythonic
 
+primitive_map = {
+    'string': 'str',
+    'integer': 'int'
+}  # TODO: add more
+
 
 def get_method_signature(service_model, operation_name, shapes, class_name):
     pythonic_op_name = pythonic.xform_name(operation_name)
@@ -12,17 +17,12 @@ def get_method_signature(service_model, operation_name, shapes, class_name):
     output_shape = operation_model.output_shape
     parameters = input_shape.members if input_shape else {}
 
-    primitive_map = {
-        'string': 'str',
-        'integer': 'int'
-    }
-
     if input_shape:
         append_to_shapes(input_shape, class_name, shapes)
     if output_shape:
         append_to_shapes(output_shape, class_name, shapes)
 
-    param_list = get_param_list(input_shape, parameters, primitive_map, shapes, class_name)
+    param_list = get_param_list(input_shape, parameters, shapes, class_name)
 
     param_str = ', '.join(param_list)
 
@@ -66,10 +66,10 @@ def get_doc_str(shape, prefix='', level=1):
     return docstr
 
 
-def get_param_list(input_shape, parameters, primitive_map, shapes, class_name):
+def get_param_list(input_shape, parameters, shapes, class_name):
     param_list = ['self']
     for name, param in parameters.items():
-        item = get_param_name(input_shape, name, param, primitive_map, shapes, class_name)
+        item = get_param_name(input_shape, name, param, shapes, class_name)
         if name in input_shape.required_members:
             param_list.insert(1, item)
         else:
@@ -84,7 +84,7 @@ def append_to_shapes(shape, class_name, shapes):
     shapes.append((shape, class_name))
 
 
-def get_param_name(shape, name, param, primitive_map, shapes, class_name):
+def get_param_name(shape, name, param, shapes, class_name):
     item = name
     if keyword.iskeyword(name):
         item += '_'
