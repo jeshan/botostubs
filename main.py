@@ -104,19 +104,7 @@ def get_param_name(shape, name, param, shapes, class_name):
 
 def get_class_signature(name, documentation, methods, shapes_in_classes):
     method_str = '\n\n'.join(methods)
-    shape_str = []
-
-    for shape_class in shapes_in_classes:
-        if shape_class[1] != name:
-            continue
-        params = ''
-        shape_begin = 'pass'
-        base_type = 'Mapping' if shape_class[0].type_name == 'structure' else 'object'
-        shape_str.append(f"""    class {shape_class[0].name}({base_type}):
-        {shape_begin}{params}
-""")
-
-    shape_str = '\n'.join(shape_str)
+    shape_str = get_shape_str(name, shapes_in_classes)
     doc_str = f'    """{documentation}"""'.replace('<p>', '').replace('</p>', '')
 
     return f"""class {name}(BaseClient):
@@ -126,6 +114,20 @@ def get_class_signature(name, documentation, methods, shapes_in_classes):
 {method_str}
 
 """
+
+
+def get_shape_str(name, shapes_in_classes):
+    shape_str = []
+
+    for shape_class in shapes_in_classes:
+        if shape_class[1] != name:
+            continue
+        base_type = 'Mapping' if shape_class[0].type_name == 'structure' else 'object'
+        shape_str.append(f"""    class {shape_class[0].name}({base_type}):
+        pass
+    """)
+
+    return '\n'.join(shape_str)
 
 
 def get_class_output(client_name):
@@ -139,12 +141,23 @@ def get_class_output(client_name):
     return get_class_signature(class_name, service_model.documentation, method_signatures, shapes_in_classes)
 
 
-if __name__ == '__main__':
-
+def print_header():
     print('from collections.abc import Mapping')
     print('from typing import List')
     print('from botocore.client import BaseClient\n\n')
 
-    boto3.setup_default_session()
-    for client_name in boto3.DEFAULT_SESSION.get_available_services():
+
+def print_clients():
+    clients = boto3.DEFAULT_SESSION.get_available_services()
+    for client_name in clients:
         print(get_class_output(client_name))
+
+
+def go():
+    print_header()
+    boto3.setup_default_session()
+    print_clients()
+
+
+if __name__ == '__main__':
+    go()
