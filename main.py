@@ -198,7 +198,7 @@ def print_sub_waiters(resource):
 def print_collections(resource):
     result = ''
     for collection in resource.meta.resource_model.collections:
-        result += f"""        class {collection.resource.type}ResourceCollection(List[{collection.resource.type}], ResourceCollection):
+        result += f"""        class {collection.resource.type}ResourceCollection(List[dict], ResourceCollection):
             pass
 
 """
@@ -242,8 +242,7 @@ def print_sub_resource(resource_name, resource, sub_resource):
     params_str = ''
     if len(params):
         params_str = ', ' + ', '.join(params)
-    return f"""        global {sub_resource.name}
-
+    return f"""        
         class {sub_resource.name}:
             {resource_doc}
 
@@ -258,7 +257,7 @@ def print_sub_resource(resource_name, resource, sub_resource):
 def print_actions(actions):
     result = ''
     for action in actions:
-        result += f"""        def {action.name}(self) -> {action.resource.type if action.resource else 'dict'}:
+        result += f"""        def {action.name}(self) -> dict:
             pass
 
 """
@@ -272,7 +271,7 @@ def print_actions(actions):
 def print_sub_actions(actions):
     result = ''
     for action in actions:
-        result += f"""            def {action.name}(self) -> {action.resource.type if action.resource else 'dict'}:
+        result += f"""            def {action.name}(self) -> dict:
                 return {action.resource.type + '()' if action.resource else '{}'}
 
 """
@@ -300,7 +299,6 @@ def get_class_output(client_name):
 def print_header():
     print('from collections.abc import Mapping')
     print('from typing import List')
-    print('global KeyPairInfo')
     print('from boto3.resources.collection import ResourceCollection')
     print('from botocore.waiter import Waiter')
     print('from botocore.paginate import Paginator')
