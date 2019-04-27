@@ -257,7 +257,7 @@ def print_sub_resource(resource_name, resource, sub_resource):
 def print_actions(actions):
     result = ''
     for action in actions:
-        result += f"""        def {action.name}(self) -> dict:
+        result += f"""        def {action.name}(self, **kwargs) -> dict:
             pass
 
 """
@@ -271,7 +271,7 @@ def print_actions(actions):
 def print_sub_actions(actions):
     result = ''
     for action in actions:
-        result += f"""            def {action.name}(self) -> dict:
+        result += f"""            def {action.name}(self, **kwargs) -> dict:
                 return {action.resource.type + '()' if action.resource else '{}'}
 
 """
