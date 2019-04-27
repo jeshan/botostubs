@@ -21,6 +21,10 @@ Gives you code assistance for **any boto3 API** in any IDE. Get started by runni
 - show required / optional fields
 - show API docs as Python docstrings
 - full api coverage
+- support for boto3 clients, e.g `type: botostubs.ACM`
+- support for service-level resources, e.g `type: botostubs.S3.S3Resource`
+- support for paginators, e.g `type: botostubs.EC2.DescribeInstancesPaginator`
+- support for waiters, e.g `type: botostubs.EC2.InstanceRunningWaiter`
 
 # How it works
 We look for all boto3 clients by running boto itself. Then loop over each of them to find what operations and classes are used. These are all dumped in a new python script, packaged in this project. This way, `botostubs` can offer comprehensive API coverage.
