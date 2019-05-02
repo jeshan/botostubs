@@ -35,6 +35,7 @@ For an in-depth account, see the blog post [Code assistance for boto3, always up
 
 # Notes
 - This package requires that your IDE already supports getting type hints from PyPI packages. It has been tested with Intellij and Visual Studio Code.
+- If you are not seeing code completion in Intellij-based ones, please increase the intellisense filesize limit e.g `idea.max.intellisense.filesize=20000` in IDE custom properties (Help > Edit Custom Properties), then restart
 - For other IDEs, you may have some luck by installing [jedi](https://github.com/davidhalter/jedi), which provides code completion for Vim, Emacs, Sublime, Atom, etc.
 
 # TODO
