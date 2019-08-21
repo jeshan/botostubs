@@ -14,5 +14,6 @@ phases:
       - pip install --upgrade pytest boto3 setuptools wheel twine
       - mkdir -p botostubs/botostubs
       - cp setup.py README.md release.sh botostubs/
+      - touch botostubs/botostubs/py.typed
       - export AWS_ACCESS_KEY_ID=FAKE AWS_SECRET_ACCESS_KEY=FAKE && python main.py > botostubs/botostubs/__init__.py
       - cd botostubs && ./release.sh

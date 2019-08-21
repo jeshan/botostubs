@@ -16,6 +16,8 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/jeshan/botostubs",
     packages=setuptools.find_packages(),
+    package_data={"botostubs": ["py.typed"]},
+    zip_safe=False,
     license='BSD-2-Clause',
     classifiers=[
         "Programming Language :: Python :: 3",
