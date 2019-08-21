@@ -12,6 +12,7 @@ COPY main.py pythonic.py ./
 COPY setup.py README.md release.sh botostubs/
 
 RUN mkdir botostubs/botostubs
+RUN touch botostubs/botostubs/py.typed
 RUN export AWS_ACCESS_KEY_ID=FAKE AWS_SECRET_ACCESS_KEY=FAKE && time python main.py > botostubs/botostubs/__init__.py
 
 WORKDIR /app/botostubs
