@@ -4,3 +4,5 @@ services:
   release:
     build:
       context: .
+    environment:
+      CODE_VERSION: 0.12
