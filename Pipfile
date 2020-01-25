@@ -1,0 +1,22 @@
+[[source]]
+name = "pypi"
+verify_ssl = true
+url = "https://pypi.org/simple"
+
+[requires]
+python_version = "3.6"
+
+[dev-packages]
+
+[packages]
+pytest = "<6"
+pytest-cleanup = "<1"
+dill = "*"
+pytest-cov = "*"
+pytest-progress = "*"
+loguru = "<1"
+boto3 = "*"
+sceptre = "<3"
+setuptools = "*"
+wheel = "*"
+twine = "*"

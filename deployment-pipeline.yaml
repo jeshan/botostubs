@@ -93,7 +93,7 @@ Resources:
       EncryptionKey: !Sub 'arn:aws:kms:${AWS::Region}:${AWS::AccountId}:alias/aws/s3'
       Environment:
         ComputeType: BUILD_GENERAL1_SMALL
-        Image: aws/codebuild/python:3.6.5
+        Image: aws/codebuild/docker:18.09.0
         PrivilegedMode: true
         Type: LINUX_CONTAINER
       Name: botostubs-release
