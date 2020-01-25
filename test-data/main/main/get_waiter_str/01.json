@@ -1,0 +1,2733 @@
+{
+  "class": null,
+  "function": {
+    "py/function": "main.get_waiter_str"
+  },
+  "module": {
+    "py/repr": "main/main"
+  },
+  "test_cases": [
+    {
+      "args": {
+        "py/tuple": [
+          null
+        ]
+      },
+      "kwargs": {},
+      "return_value": ""
+    },
+    {
+      "args": {
+        "py/tuple": [
+          {
+            "_waiter_config": {
+              "py/reduce": [
+                {
+                  "py/type": "collections.OrderedDict"
+                },
+                {
+                  "py/tuple": []
+                },
+                null,
+                null,
+                {
+                  "py/tuple": [
+                    {
+                      "py/tuple": [
+                        "CertificateValidated",
+                        {
+                          "py/reduce": [
+                            {
+                              "py/type": "collections.OrderedDict"
+                            },
+                            {
+                              "py/tuple": []
+                            },
+                            null,
+                            null,
+                            {
+                              "py/tuple": [
+                                {
+                                  "py/tuple": [
+                                    "delay",
+                                    60
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "maxAttempts",
+                                    40
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "operation",
+                                    "DescribeCertificate"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "acceptors",
+                                    [
+                                      {
+                                        "py/reduce": [
+                                          {
+                                            "py/type": "collections.OrderedDict"
+                                          },
+                                          {
+                                            "py/tuple": []
+                                          },
+                                          null,
+                                          null,
+                                          {
+                                            "py/tuple": [
+                                              {
+                                                "py/tuple": [
+                                                  "matcher",
+                                                  "pathAll"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "expected",
+                                                  "SUCCESS"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "argument",
+                                                  "Certificate.DomainValidationOptions[].ValidationStatus"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "state",
+                                                  "success"
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "py/reduce": [
+                                          {
+                                            "py/type": "collections.OrderedDict"
+                                          },
+                                          {
+                                            "py/tuple": []
+                                          },
+                                          null,
+                                          null,
+                                          {
+                                            "py/tuple": [
+                                              {
+                                                "py/tuple": [
+                                                  "matcher",
+                                                  "pathAny"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "expected",
+                                                  "PENDING_VALIDATION"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "argument",
+                                                  "Certificate.DomainValidationOptions[].ValidationStatus"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "state",
+                                                  "retry"
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "py/reduce": [
+                                          {
+                                            "py/type": "collections.OrderedDict"
+                                          },
+                                          {
+                                            "py/tuple": []
+                                          },
+                                          null,
+                                          null,
+                                          {
+                                            "py/tuple": [
+                                              {
+                                                "py/tuple": [
+                                                  "matcher",
+                                                  "path"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "expected",
+                                                  "FAILED"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "argument",
+                                                  "Certificate.Status"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "state",
+                                                  "failure"
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "py/reduce": [
+                                          {
+                                            "py/type": "collections.OrderedDict"
+                                          },
+                                          {
+                                            "py/tuple": []
+                                          },
+                                          null,
+                                          null,
+                                          {
+                                            "py/tuple": [
+                                              {
+                                                "py/tuple": [
+                                                  "matcher",
+                                                  "error"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "expected",
+                                                  "ResourceNotFoundException"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "state",
+                                                  "failure"
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "py/object": "botocore.waiter.WaiterModel",
+            "version": 2,
+            "waiter_names": [
+              "CertificateValidated"
+            ]
+          }
+        ]
+      },
+      "kwargs": {},
+      "return_value": "    class CertificateValidatedWaiter(Waiter):\n        def wait(self, **kwargs):\n            r\"\"\"see function `describe_certificate` for valid parameters\"\"\"\n            pass\n\n"
+    },
+    {
+      "args": {
+        "py/tuple": [
+          {
+            "_waiter_config": {
+              "py/reduce": [
+                {
+                  "py/type": "collections.OrderedDict"
+                },
+                {
+                  "py/tuple": []
+                },
+                null,
+                null,
+                {
+                  "py/tuple": [
+                    {
+                      "py/tuple": [
+                        "CertificateAuthorityCSRCreated",
+                        {
+                          "py/reduce": [
+                            {
+                              "py/type": "collections.OrderedDict"
+                            },
+                            {
+                              "py/tuple": []
+                            },
+                            null,
+                            null,
+                            {
+                              "py/tuple": [
+                                {
+                                  "py/tuple": [
+                                    "description",
+                                    "Wait until a Certificate Authority CSR is created"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "operation",
+                                    "GetCertificateAuthorityCsr"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "delay",
+                                    3
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "maxAttempts",
+                                    60
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "acceptors",
+                                    [
+                                      {
+                                        "py/reduce": [
+                                          {
+                                            "py/type": "collections.OrderedDict"
+                                          },
+                                          {
+                                            "py/tuple": []
+                                          },
+                                          null,
+                                          null,
+                                          {
+                                            "py/tuple": [
+                                              {
+                                                "py/tuple": [
+                                                  "state",
+                                                  "success"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "matcher",
+                                                  "status"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "expected",
+                                                  200
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "py/reduce": [
+                                          {
+                                            "py/type": "collections.OrderedDict"
+                                          },
+                                          {
+                                            "py/tuple": []
+                                          },
+                                          null,
+                                          null,
+                                          {
+                                            "py/tuple": [
+                                              {
+                                                "py/tuple": [
+                                                  "state",
+                                                  "retry"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "matcher",
+                                                  "error"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "expected",
+                                                  "RequestInProgressException"
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "py/tuple": [
+                        "CertificateIssued",
+                        {
+                          "py/reduce": [
+                            {
+                              "py/type": "collections.OrderedDict"
+                            },
+                            {
+                              "py/tuple": []
+                            },
+                            null,
+                            null,
+                            {
+                              "py/tuple": [
+                                {
+                                  "py/tuple": [
+                                    "description",
+                                    "Wait until a certificate is issued"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "operation",
+                                    "GetCertificate"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "delay",
+                                    3
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "maxAttempts",
+                                    60
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "acceptors",
+                                    [
+                                      {
+                                        "py/reduce": [
+                                          {
+                                            "py/type": "collections.OrderedDict"
+                                          },
+                                          {
+                                            "py/tuple": []
+                                          },
+                                          null,
+                                          null,
+                                          {
+                                            "py/tuple": [
+                                              {
+                                                "py/tuple": [
+                                                  "state",
+                                                  "success"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "matcher",
+                                                  "status"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "expected",
+                                                  200
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "py/reduce": [
+                                          {
+                                            "py/type": "collections.OrderedDict"
+                                          },
+                                          {
+                                            "py/tuple": []
+                                          },
+                                          null,
+                                          null,
+                                          {
+                                            "py/tuple": [
+                                              {
+                                                "py/tuple": [
+                                                  "state",
+                                                  "retry"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "matcher",
+                                                  "error"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "expected",
+                                                  "RequestInProgressException"
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "py/tuple": [
+                        "AuditReportCreated",
+                        {
+                          "py/reduce": [
+                            {
+                              "py/type": "collections.OrderedDict"
+                            },
+                            {
+                              "py/tuple": []
+                            },
+                            null,
+                            null,
+                            {
+                              "py/tuple": [
+                                {
+                                  "py/tuple": [
+                                    "description",
+                                    "Wait until a Audit Report is created"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "operation",
+                                    "DescribeCertificateAuthorityAuditReport"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "delay",
+                                    3
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "maxAttempts",
+                                    60
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "acceptors",
+                                    [
+                                      {
+                                        "py/reduce": [
+                                          {
+                                            "py/type": "collections.OrderedDict"
+                                          },
+                                          {
+                                            "py/tuple": []
+                                          },
+                                          null,
+                                          null,
+                                          {
+                                            "py/tuple": [
+                                              {
+                                                "py/tuple": [
+                                                  "state",
+                                                  "success"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "matcher",
+                                                  "path"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "argument",
+                                                  "AuditReportStatus"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "expected",
+                                                  "SUCCESS"
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "py/reduce": [
+                                          {
+                                            "py/type": "collections.OrderedDict"
+                                          },
+                                          {
+                                            "py/tuple": []
+                                          },
+                                          null,
+                                          null,
+                                          {
+                                            "py/tuple": [
+                                              {
+                                                "py/tuple": [
+                                                  "state",
+                                                  "failure"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "matcher",
+                                                  "path"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "argument",
+                                                  "AuditReportStatus"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "expected",
+                                                  "FAILED"
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "py/object": "botocore.waiter.WaiterModel",
+            "version": 2,
+            "waiter_names": [
+              "AuditReportCreated",
+              "CertificateAuthorityCSRCreated",
+              "CertificateIssued"
+            ]
+          }
+        ]
+      },
+      "kwargs": {},
+      "return_value": "    class AuditReportCreatedWaiter(Waiter):\n        def wait(self, **kwargs):\n            r\"\"\"see function `describe_certificate_authority_audit_report` for valid parameters\"\"\"\n            pass\n    class CertificateAuthorityCSRCreatedWaiter(Waiter):\n        def wait(self, **kwargs):\n            r\"\"\"see function `get_certificate_authority_csr` for valid parameters\"\"\"\n            pass\n    class CertificateIssuedWaiter(Waiter):\n        def wait(self, **kwargs):\n            r\"\"\"see function `get_certificate` for valid parameters\"\"\"\n            pass\n\n"
+    },
+    {
+      "args": {
+        "py/tuple": [
+          {
+            "_waiter_config": {
+              "py/reduce": [
+                {
+                  "py/type": "collections.OrderedDict"
+                },
+                {
+                  "py/tuple": []
+                },
+                null,
+                null,
+                {
+                  "py/tuple": [
+                    {
+                      "py/tuple": [
+                        "FleetStarted",
+                        {
+                          "py/reduce": [
+                            {
+                              "py/type": "collections.OrderedDict"
+                            },
+                            {
+                              "py/tuple": []
+                            },
+                            null,
+                            null,
+                            {
+                              "py/tuple": [
+                                {
+                                  "py/tuple": [
+                                    "delay",
+                                    30
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "maxAttempts",
+                                    40
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "operation",
+                                    "DescribeFleets"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "acceptors",
+                                    [
+                                      {
+                                        "py/reduce": [
+                                          {
+                                            "py/type": "collections.OrderedDict"
+                                          },
+                                          {
+                                            "py/tuple": []
+                                          },
+                                          null,
+                                          null,
+                                          {
+                                            "py/tuple": [
+                                              {
+                                                "py/tuple": [
+                                                  "state",
+                                                  "success"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "matcher",
+                                                  "pathAll"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "argument",
+                                                  "Fleets[].State"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "expected",
+                                                  "ACTIVE"
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "py/reduce": [
+                                          {
+                                            "py/type": "collections.OrderedDict"
+                                          },
+                                          {
+                                            "py/tuple": []
+                                          },
+                                          null,
+                                          null,
+                                          {
+                                            "py/tuple": [
+                                              {
+                                                "py/tuple": [
+                                                  "state",
+                                                  "failure"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "matcher",
+                                                  "pathAny"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "argument",
+                                                  "Fleets[].State"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "expected",
+                                                  "PENDING_DEACTIVATE"
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "py/reduce": [
+                                          {
+                                            "py/type": "collections.OrderedDict"
+                                          },
+                                          {
+                                            "py/tuple": []
+                                          },
+                                          null,
+                                          null,
+                                          {
+                                            "py/tuple": [
+                                              {
+                                                "py/tuple": [
+                                                  "state",
+                                                  "failure"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "matcher",
+                                                  "pathAny"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "argument",
+                                                  "Fleets[].State"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "expected",
+                                                  "INACTIVE"
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "py/tuple": [
+                        "FleetStopped",
+                        {
+                          "py/reduce": [
+                            {
+                              "py/type": "collections.OrderedDict"
+                            },
+                            {
+                              "py/tuple": []
+                            },
+                            null,
+                            null,
+                            {
+                              "py/tuple": [
+                                {
+                                  "py/tuple": [
+                                    "delay",
+                                    30
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "maxAttempts",
+                                    40
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "operation",
+                                    "DescribeFleets"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "acceptors",
+                                    [
+                                      {
+                                        "py/reduce": [
+                                          {
+                                            "py/type": "collections.OrderedDict"
+                                          },
+                                          {
+                                            "py/tuple": []
+                                          },
+                                          null,
+                                          null,
+                                          {
+                                            "py/tuple": [
+                                              {
+                                                "py/tuple": [
+                                                  "state",
+                                                  "success"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "matcher",
+                                                  "pathAll"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "argument",
+                                                  "Fleets[].State"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "expected",
+                                                  "INACTIVE"
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "py/reduce": [
+                                          {
+                                            "py/type": "collections.OrderedDict"
+                                          },
+                                          {
+                                            "py/tuple": []
+                                          },
+                                          null,
+                                          null,
+                                          {
+                                            "py/tuple": [
+                                              {
+                                                "py/tuple": [
+                                                  "state",
+                                                  "failure"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "matcher",
+                                                  "pathAny"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "argument",
+                                                  "Fleets[].State"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "expected",
+                                                  "PENDING_ACTIVATE"
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "py/reduce": [
+                                          {
+                                            "py/type": "collections.OrderedDict"
+                                          },
+                                          {
+                                            "py/tuple": []
+                                          },
+                                          null,
+                                          null,
+                                          {
+                                            "py/tuple": [
+                                              {
+                                                "py/tuple": [
+                                                  "state",
+                                                  "failure"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "matcher",
+                                                  "pathAny"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "argument",
+                                                  "Fleets[].State"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "expected",
+                                                  "ACTIVE"
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "py/object": "botocore.waiter.WaiterModel",
+            "version": 2,
+            "waiter_names": [
+              "FleetStarted",
+              "FleetStopped"
+            ]
+          }
+        ]
+      },
+      "kwargs": {},
+      "return_value": "    class FleetStartedWaiter(Waiter):\n        def wait(self, **kwargs):\n            r\"\"\"see function `describe_fleets` for valid parameters\"\"\"\n            pass\n    class FleetStoppedWaiter(Waiter):\n        def wait(self, **kwargs):\n            r\"\"\"see function `describe_fleets` for valid parameters\"\"\"\n            pass\n\n"
+    },
+    {
+      "args": {
+        "py/tuple": [
+          {
+            "_waiter_config": {
+              "py/reduce": [
+                {
+                  "py/type": "collections.OrderedDict"
+                },
+                {
+                  "py/tuple": []
+                },
+                null,
+                null,
+                {
+                  "py/tuple": [
+                    {
+                      "py/tuple": [
+                        "StackExists",
+                        {
+                          "py/reduce": [
+                            {
+                              "py/type": "collections.OrderedDict"
+                            },
+                            {
+                              "py/tuple": []
+                            },
+                            null,
+                            null,
+                            {
+                              "py/tuple": [
+                                {
+                                  "py/tuple": [
+                                    "delay",
+                                    5
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "operation",
+                                    "DescribeStacks"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "maxAttempts",
+                                    20
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "acceptors",
+                                    [
+                                      {
+                                        "py/reduce": [
+                                          {
+                                            "py/type": "collections.OrderedDict"
+                                          },
+                                          {
+                                            "py/tuple": []
+                                          },
+                                          null,
+                                          null,
+                                          {
+                                            "py/tuple": [
+                                              {
+                                                "py/tuple": [
+                                                  "matcher",
+                                                  "status"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "expected",
+                                                  200
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "state",
+                                                  "success"
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "py/reduce": [
+                                          {
+                                            "py/type": "collections.OrderedDict"
+                                          },
+                                          {
+                                            "py/tuple": []
+                                          },
+                                          null,
+                                          null,
+                                          {
+                                            "py/tuple": [
+                                              {
+                                                "py/tuple": [
+                                                  "matcher",
+                                                  "error"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "expected",
+                                                  "ValidationError"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "state",
+                                                  "retry"
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "py/tuple": [
+                        "StackCreateComplete",
+                        {
+                          "py/reduce": [
+                            {
+                              "py/type": "collections.OrderedDict"
+                            },
+                            {
+                              "py/tuple": []
+                            },
+                            null,
+                            null,
+                            {
+                              "py/tuple": [
+                                {
+                                  "py/tuple": [
+                                    "delay",
+                                    30
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "operation",
+                                    "DescribeStacks"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "maxAttempts",
+                                    120
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "description",
+                                    "Wait until stack status is CREATE_COMPLETE."
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "acceptors",
+                                    [
+                                      {
+                                        "py/reduce": [
+                                          {
+                                            "py/type": "collections.OrderedDict"
+                                          },
+                                          {
+                                            "py/tuple": []
+                                          },
+                                          null,
+                                          null,
+                                          {
+                                            "py/tuple": [
+                                              {
+                                                "py/tuple": [
+                                                  "argument",
+                                                  "Stacks[].StackStatus"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "expected",
+                                                  "CREATE_COMPLETE"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "matcher",
+                                                  "pathAll"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "state",
+                                                  "success"
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "py/reduce": [
+                                          {
+                                            "py/type": "collections.OrderedDict"
+                                          },
+                                          {
+                                            "py/tuple": []
+                                          },
+                                          null,
+                                          null,
+                                          {
+                                            "py/tuple": [
+                                              {
+                                                "py/tuple": [
+                                                  "argument",
+                                                  "Stacks[].StackStatus"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "expected",
+                                                  "CREATE_FAILED"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "matcher",
+                                                  "pathAny"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "state",
+                                                  "failure"
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "py/reduce": [
+                                          {
+                                            "py/type": "collections.OrderedDict"
+                                          },
+                                          {
+                                            "py/tuple": []
+                                          },
+                                          null,
+                                          null,
+                                          {
+                                            "py/tuple": [
+                                              {
+                                                "py/tuple": [
+                                                  "argument",
+                                                  "Stacks[].StackStatus"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "expected",
+                                                  "DELETE_COMPLETE"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "matcher",
+                                                  "pathAny"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "state",
+                                                  "failure"
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "py/reduce": [
+                                          {
+                                            "py/type": "collections.OrderedDict"
+                                          },
+                                          {
+                                            "py/tuple": []
+                                          },
+                                          null,
+                                          null,
+                                          {
+                                            "py/tuple": [
+                                              {
+                                                "py/tuple": [
+                                                  "argument",
+                                                  "Stacks[].StackStatus"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "expected",
+                                                  "DELETE_FAILED"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "matcher",
+                                                  "pathAny"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "state",
+                                                  "failure"
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "py/reduce": [
+                                          {
+                                            "py/type": "collections.OrderedDict"
+                                          },
+                                          {
+                                            "py/tuple": []
+                                          },
+                                          null,
+                                          null,
+                                          {
+                                            "py/tuple": [
+                                              {
+                                                "py/tuple": [
+                                                  "argument",
+                                                  "Stacks[].StackStatus"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "expected",
+                                                  "ROLLBACK_FAILED"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "matcher",
+                                                  "pathAny"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "state",
+                                                  "failure"
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "py/reduce": [
+                                          {
+                                            "py/type": "collections.OrderedDict"
+                                          },
+                                          {
+                                            "py/tuple": []
+                                          },
+                                          null,
+                                          null,
+                                          {
+                                            "py/tuple": [
+                                              {
+                                                "py/tuple": [
+                                                  "argument",
+                                                  "Stacks[].StackStatus"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "expected",
+                                                  "ROLLBACK_COMPLETE"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "matcher",
+                                                  "pathAny"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "state",
+                                                  "failure"
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "py/reduce": [
+                                          {
+                                            "py/type": "collections.OrderedDict"
+                                          },
+                                          {
+                                            "py/tuple": []
+                                          },
+                                          null,
+                                          null,
+                                          {
+                                            "py/tuple": [
+                                              {
+                                                "py/tuple": [
+                                                  "expected",
+                                                  "ValidationError"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "matcher",
+                                                  "error"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "state",
+                                                  "failure"
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "py/tuple": [
+                        "StackDeleteComplete",
+                        {
+                          "py/reduce": [
+                            {
+                              "py/type": "collections.OrderedDict"
+                            },
+                            {
+                              "py/tuple": []
+                            },
+                            null,
+                            null,
+                            {
+                              "py/tuple": [
+                                {
+                                  "py/tuple": [
+                                    "delay",
+                                    30
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "operation",
+                                    "DescribeStacks"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "maxAttempts",
+                                    120
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "description",
+                                    "Wait until stack status is DELETE_COMPLETE."
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "acceptors",
+                                    [
+                                      {
+                                        "py/reduce": [
+                                          {
+                                            "py/type": "collections.OrderedDict"
+                                          },
+                                          {
+                                            "py/tuple": []
+                                          },
+                                          null,
+                                          null,
+                                          {
+                                            "py/tuple": [
+                                              {
+                                                "py/tuple": [
+                                                  "argument",
+                                                  "Stacks[].StackStatus"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "expected",
+                                                  "DELETE_COMPLETE"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "matcher",
+                                                  "pathAll"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "state",
+                                                  "success"
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "py/reduce": [
+                                          {
+                                            "py/type": "collections.OrderedDict"
+                                          },
+                                          {
+                                            "py/tuple": []
+                                          },
+                                          null,
+                                          null,
+                                          {
+                                            "py/tuple": [
+                                              {
+                                                "py/tuple": [
+                                                  "expected",
+                                                  "ValidationError"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "matcher",
+                                                  "error"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "state",
+                                                  "success"
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "py/reduce": [
+                                          {
+                                            "py/type": "collections.OrderedDict"
+                                          },
+                                          {
+                                            "py/tuple": []
+                                          },
+                                          null,
+                                          null,
+                                          {
+                                            "py/tuple": [
+                                              {
+                                                "py/tuple": [
+                                                  "argument",
+                                                  "Stacks[].StackStatus"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "expected",
+                                                  "DELETE_FAILED"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "matcher",
+                                                  "pathAny"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "state",
+                                                  "failure"
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "py/reduce": [
+                                          {
+                                            "py/type": "collections.OrderedDict"
+                                          },
+                                          {
+                                            "py/tuple": []
+                                          },
+                                          null,
+                                          null,
+                                          {
+                                            "py/tuple": [
+                                              {
+                                                "py/tuple": [
+                                                  "argument",
+                                                  "Stacks[].StackStatus"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "expected",
+                                                  "CREATE_FAILED"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "matcher",
+                                                  "pathAny"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "state",
+                                                  "failure"
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "py/reduce": [
+                                          {
+                                            "py/type": "collections.OrderedDict"
+                                          },
+                                          {
+                                            "py/tuple": []
+                                          },
+                                          null,
+                                          null,
+                                          {
+                                            "py/tuple": [
+                                              {
+                                                "py/tuple": [
+                                                  "argument",
+                                                  "Stacks[].StackStatus"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "expected",
+                                                  "ROLLBACK_FAILED"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "matcher",
+                                                  "pathAny"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "state",
+                                                  "failure"
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "py/reduce": [
+                                          {
+                                            "py/type": "collections.OrderedDict"
+                                          },
+                                          {
+                                            "py/tuple": []
+                                          },
+                                          null,
+                                          null,
+                                          {
+                                            "py/tuple": [
+                                              {
+                                                "py/tuple": [
+                                                  "argument",
+                                                  "Stacks[].StackStatus"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "expected",
+                                                  "UPDATE_ROLLBACK_IN_PROGRESS"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "matcher",
+                                                  "pathAny"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "state",
+                                                  "failure"
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "py/reduce": [
+                                          {
+                                            "py/type": "collections.OrderedDict"
+                                          },
+                                          {
+                                            "py/tuple": []
+                                          },
+                                          null,
+                                          null,
+                                          {
+                                            "py/tuple": [
+                                              {
+                                                "py/tuple": [
+                                                  "argument",
+                                                  "Stacks[].StackStatus"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "expected",
+                                                  "UPDATE_ROLLBACK_FAILED"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "matcher",
+                                                  "pathAny"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "state",
+                                                  "failure"
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "py/reduce": [
+                                          {
+                                            "py/type": "collections.OrderedDict"
+                                          },
+                                          {
+                                            "py/tuple": []
+                                          },
+                                          null,
+                                          null,
+                                          {
+                                            "py/tuple": [
+                                              {
+                                                "py/tuple": [
+                                                  "argument",
+                                                  "Stacks[].StackStatus"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "expected",
+                                                  "UPDATE_ROLLBACK_COMPLETE"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "matcher",
+                                                  "pathAny"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "state",
+                                                  "failure"
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "py/tuple": [
+                        "StackUpdateComplete",
+                        {
+                          "py/reduce": [
+                            {
+                              "py/type": "collections.OrderedDict"
+                            },
+                            {
+                              "py/tuple": []
+                            },
+                            null,
+                            null,
+                            {
+                              "py/tuple": [
+                                {
+                                  "py/tuple": [
+                                    "delay",
+                                    30
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "maxAttempts",
+                                    120
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "operation",
+                                    "DescribeStacks"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "description",
+                                    "Wait until stack status is UPDATE_COMPLETE."
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "acceptors",
+                                    [
+                                      {
+                                        "py/reduce": [
+                                          {
+                                            "py/type": "collections.OrderedDict"
+                                          },
+                                          {
+                                            "py/tuple": []
+                                          },
+                                          null,
+                                          null,
+                                          {
+                                            "py/tuple": [
+                                              {
+                                                "py/tuple": [
+                                                  "argument",
+                                                  "Stacks[].StackStatus"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "expected",
+                                                  "UPDATE_COMPLETE"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "matcher",
+                                                  "pathAll"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "state",
+                                                  "success"
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "py/reduce": [
+                                          {
+                                            "py/type": "collections.OrderedDict"
+                                          },
+                                          {
+                                            "py/tuple": []
+                                          },
+                                          null,
+                                          null,
+                                          {
+                                            "py/tuple": [
+                                              {
+                                                "py/tuple": [
+                                                  "expected",
+                                                  "UPDATE_FAILED"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "matcher",
+                                                  "pathAny"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "state",
+                                                  "failure"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "argument",
+                                                  "Stacks[].StackStatus"
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "py/reduce": [
+                                          {
+                                            "py/type": "collections.OrderedDict"
+                                          },
+                                          {
+                                            "py/tuple": []
+                                          },
+                                          null,
+                                          null,
+                                          {
+                                            "py/tuple": [
+                                              {
+                                                "py/tuple": [
+                                                  "argument",
+                                                  "Stacks[].StackStatus"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "expected",
+                                                  "UPDATE_ROLLBACK_FAILED"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "matcher",
+                                                  "pathAny"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "state",
+                                                  "failure"
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "py/reduce": [
+                                          {
+                                            "py/type": "collections.OrderedDict"
+                                          },
+                                          {
+                                            "py/tuple": []
+                                          },
+                                          null,
+                                          null,
+                                          {
+                                            "py/tuple": [
+                                              {
+                                                "py/tuple": [
+                                                  "expected",
+                                                  "UPDATE_ROLLBACK_COMPLETE"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "matcher",
+                                                  "pathAny"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "state",
+                                                  "failure"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "argument",
+                                                  "Stacks[].StackStatus"
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "py/reduce": [
+                                          {
+                                            "py/type": "collections.OrderedDict"
+                                          },
+                                          {
+                                            "py/tuple": []
+                                          },
+                                          null,
+                                          null,
+                                          {
+                                            "py/tuple": [
+                                              {
+                                                "py/tuple": [
+                                                  "expected",
+                                                  "ValidationError"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "matcher",
+                                                  "error"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "state",
+                                                  "failure"
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "py/tuple": [
+                        "StackImportComplete",
+                        {
+                          "py/reduce": [
+                            {
+                              "py/type": "collections.OrderedDict"
+                            },
+                            {
+                              "py/tuple": []
+                            },
+                            null,
+                            null,
+                            {
+                              "py/tuple": [
+                                {
+                                  "py/tuple": [
+                                    "delay",
+                                    30
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "maxAttempts",
+                                    120
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "operation",
+                                    "DescribeStacks"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "description",
+                                    "Wait until stack status is IMPORT_COMPLETE."
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "acceptors",
+                                    [
+                                      {
+                                        "py/reduce": [
+                                          {
+                                            "py/type": "collections.OrderedDict"
+                                          },
+                                          {
+                                            "py/tuple": []
+                                          },
+                                          null,
+                                          null,
+                                          {
+                                            "py/tuple": [
+                                              {
+                                                "py/tuple": [
+                                                  "argument",
+                                                  "Stacks[].StackStatus"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "expected",
+                                                  "IMPORT_COMPLETE"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "matcher",
+                                                  "pathAll"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "state",
+                                                  "success"
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "py/reduce": [
+                                          {
+                                            "py/type": "collections.OrderedDict"
+                                          },
+                                          {
+                                            "py/tuple": []
+                                          },
+                                          null,
+                                          null,
+                                          {
+                                            "py/tuple": [
+                                              {
+                                                "py/tuple": [
+                                                  "expected",
+                                                  "ROLLBACK_COMPLETE"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "matcher",
+                                                  "pathAny"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "state",
+                                                  "failure"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "argument",
+                                                  "Stacks[].StackStatus"
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "py/reduce": [
+                                          {
+                                            "py/type": "collections.OrderedDict"
+                                          },
+                                          {
+                                            "py/tuple": []
+                                          },
+                                          null,
+                                          null,
+                                          {
+                                            "py/tuple": [
+                                              {
+                                                "py/tuple": [
+                                                  "expected",
+                                                  "ROLLBACK_FAILED"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "matcher",
+                                                  "pathAny"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "state",
+                                                  "failure"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "argument",
+                                                  "Stacks[].StackStatus"
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "py/reduce": [
+                                          {
+                                            "py/type": "collections.OrderedDict"
+                                          },
+                                          {
+                                            "py/tuple": []
+                                          },
+                                          null,
+                                          null,
+                                          {
+                                            "py/tuple": [
+                                              {
+                                                "py/tuple": [
+                                                  "argument",
+                                                  "Stacks[].StackStatus"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "expected",
+                                                  "IMPORT_ROLLBACK_IN_PROGRESS"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "matcher",
+                                                  "pathAny"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "state",
+                                                  "failure"
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "py/reduce": [
+                                          {
+                                            "py/type": "collections.OrderedDict"
+                                          },
+                                          {
+                                            "py/tuple": []
+                                          },
+                                          null,
+                                          null,
+                                          {
+                                            "py/tuple": [
+                                              {
+                                                "py/tuple": [
+                                                  "argument",
+                                                  "Stacks[].StackStatus"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "expected",
+                                                  "IMPORT_ROLLBACK_FAILED"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "matcher",
+                                                  "pathAny"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "state",
+                                                  "failure"
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "py/reduce": [
+                                          {
+                                            "py/type": "collections.OrderedDict"
+                                          },
+                                          {
+                                            "py/tuple": []
+                                          },
+                                          null,
+                                          null,
+                                          {
+                                            "py/tuple": [
+                                              {
+                                                "py/tuple": [
+                                                  "expected",
+                                                  "IMPORT_ROLLBACK_COMPLETE"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "matcher",
+                                                  "pathAny"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "state",
+                                                  "failure"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "argument",
+                                                  "Stacks[].StackStatus"
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "py/reduce": [
+                                          {
+                                            "py/type": "collections.OrderedDict"
+                                          },
+                                          {
+                                            "py/tuple": []
+                                          },
+                                          null,
+                                          null,
+                                          {
+                                            "py/tuple": [
+                                              {
+                                                "py/tuple": [
+                                                  "expected",
+                                                  "ValidationError"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "matcher",
+                                                  "error"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "state",
+                                                  "failure"
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "py/tuple": [
+                        "ChangeSetCreateComplete",
+                        {
+                          "py/reduce": [
+                            {
+                              "py/type": "collections.OrderedDict"
+                            },
+                            {
+                              "py/tuple": []
+                            },
+                            null,
+                            null,
+                            {
+                              "py/tuple": [
+                                {
+                                  "py/tuple": [
+                                    "delay",
+                                    30
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "operation",
+                                    "DescribeChangeSet"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "maxAttempts",
+                                    120
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "description",
+                                    "Wait until change set status is CREATE_COMPLETE."
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "acceptors",
+                                    [
+                                      {
+                                        "py/reduce": [
+                                          {
+                                            "py/type": "collections.OrderedDict"
+                                          },
+                                          {
+                                            "py/tuple": []
+                                          },
+                                          null,
+                                          null,
+                                          {
+                                            "py/tuple": [
+                                              {
+                                                "py/tuple": [
+                                                  "argument",
+                                                  "Status"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "expected",
+                                                  "CREATE_COMPLETE"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "matcher",
+                                                  "path"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "state",
+                                                  "success"
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "py/reduce": [
+                                          {
+                                            "py/type": "collections.OrderedDict"
+                                          },
+                                          {
+                                            "py/tuple": []
+                                          },
+                                          null,
+                                          null,
+                                          {
+                                            "py/tuple": [
+                                              {
+                                                "py/tuple": [
+                                                  "argument",
+                                                  "Status"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "expected",
+                                                  "FAILED"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "matcher",
+                                                  "path"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "state",
+                                                  "failure"
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "py/reduce": [
+                                          {
+                                            "py/type": "collections.OrderedDict"
+                                          },
+                                          {
+                                            "py/tuple": []
+                                          },
+                                          null,
+                                          null,
+                                          {
+                                            "py/tuple": [
+                                              {
+                                                "py/tuple": [
+                                                  "expected",
+                                                  "ValidationError"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "matcher",
+                                                  "error"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "state",
+                                                  "failure"
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "py/tuple": [
+                        "TypeRegistrationComplete",
+                        {
+                          "py/reduce": [
+                            {
+                              "py/type": "collections.OrderedDict"
+                            },
+                            {
+                              "py/tuple": []
+                            },
+                            null,
+                            null,
+                            {
+                              "py/tuple": [
+                                {
+                                  "py/tuple": [
+                                    "delay",
+                                    30
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "operation",
+                                    "DescribeTypeRegistration"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "maxAttempts",
+                                    120
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "description",
+                                    "Wait until type registration is COMPLETE."
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "acceptors",
+                                    [
+                                      {
+                                        "py/reduce": [
+                                          {
+                                            "py/type": "collections.OrderedDict"
+                                          },
+                                          {
+                                            "py/tuple": []
+                                          },
+                                          null,
+                                          null,
+                                          {
+                                            "py/tuple": [
+                                              {
+                                                "py/tuple": [
+                                                  "argument",
+                                                  "ProgressStatus"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "expected",
+                                                  "COMPLETE"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "matcher",
+                                                  "path"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "state",
+                                                  "success"
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "py/reduce": [
+                                          {
+                                            "py/type": "collections.OrderedDict"
+                                          },
+                                          {
+                                            "py/tuple": []
+                                          },
+                                          null,
+                                          null,
+                                          {
+                                            "py/tuple": [
+                                              {
+                                                "py/tuple": [
+                                                  "argument",
+                                                  "ProgressStatus"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "expected",
+                                                  "FAILED"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "matcher",
+                                                  "path"
+                                                ]
+                                              },
+                                              {
+                                                "py/tuple": [
+                                                  "state",
+                                                  "failure"
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "py/object": "botocore.waiter.WaiterModel",
+            "version": 2,
+            "waiter_names": [
+              "ChangeSetCreateComplete",
+              "StackCreateComplete",
+              "StackDeleteComplete",
+              "StackExists",
+              "StackImportComplete",
+              "StackUpdateComplete",
+              "TypeRegistrationComplete"
+            ]
+          }
+        ]
+      },
+      "kwargs": {},
+      "return_value": "    class ChangeSetCreateCompleteWaiter(Waiter):\n        def wait(self, **kwargs):\n            r\"\"\"see function `describe_change_set` for valid parameters\"\"\"\n            pass\n    class StackCreateCompleteWaiter(Waiter):\n        def wait(self, **kwargs):\n            r\"\"\"see function `describe_stacks` for valid parameters\"\"\"\n            pass\n    class StackDeleteCompleteWaiter(Waiter):\n        def wait(self, **kwargs):\n            r\"\"\"see function `describe_stacks` for valid parameters\"\"\"\n            pass\n    class StackExistsWaiter(Waiter):\n        def wait(self, **kwargs):\n            r\"\"\"see function `describe_stacks` for valid parameters\"\"\"\n            pass\n    class StackImportCompleteWaiter(Waiter):\n        def wait(self, **kwargs):\n            r\"\"\"see function `describe_stacks` for valid parameters\"\"\"\n            pass\n    class StackUpdateCompleteWaiter(Waiter):\n        def wait(self, **kwargs):\n            r\"\"\"see function `describe_stacks` for valid parameters\"\"\"\n            pass\n    class TypeRegistrationCompleteWaiter(Waiter):\n        def wait(self, **kwargs):\n            r\"\"\"see function `describe_type_registration` for valid parameters\"\"\"\n            pass\n\n"
+    }
+  ]
+}

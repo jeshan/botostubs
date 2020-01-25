@@ -1,0 +1,1090 @@
+{
+  "class": null,
+  "function": {
+    "py/function": "main.get_paginator_str"
+  },
+  "module": {
+    "py/repr": "main/main"
+  },
+  "test_cases": [
+    {
+      "args": {
+        "py/tuple": [
+          {
+            "_paginator_config": {
+              "py/reduce": [
+                {
+                  "py/type": "collections.OrderedDict"
+                },
+                {
+                  "py/tuple": []
+                },
+                null,
+                null,
+                {
+                  "py/tuple": []
+                }
+              ]
+            },
+            "py/object": "botocore.paginate.PaginatorModel"
+          }
+        ]
+      },
+      "kwargs": {},
+      "return_value": "\n"
+    },
+    {
+      "args": {
+        "py/tuple": [
+          {
+            "_paginator_config": {
+              "py/reduce": [
+                {
+                  "py/type": "collections.OrderedDict"
+                },
+                {
+                  "py/tuple": []
+                },
+                null,
+                null,
+                {
+                  "py/tuple": [
+                    {
+                      "py/tuple": [
+                        "ListCertificates",
+                        {
+                          "py/reduce": [
+                            {
+                              "py/type": "collections.OrderedDict"
+                            },
+                            {
+                              "py/tuple": []
+                            },
+                            null,
+                            null,
+                            {
+                              "py/tuple": [
+                                {
+                                  "py/tuple": [
+                                    "input_token",
+                                    "NextToken"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "output_token",
+                                    "NextToken"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "limit_key",
+                                    "MaxItems"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "result_key",
+                                    "CertificateSummaryList"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "py/object": "botocore.paginate.PaginatorModel"
+          }
+        ]
+      },
+      "kwargs": {},
+      "return_value": "    class ListCertificatesPaginator(Paginator):\n        def wait(self, **kwargs):\n            r\"\"\"see function `list_certificates` for valid parameters\"\"\"\n            pass\n\n"
+    },
+    {
+      "args": {
+        "py/tuple": [
+          {
+            "_paginator_config": {
+              "py/reduce": [
+                {
+                  "py/type": "collections.OrderedDict"
+                },
+                {
+                  "py/tuple": []
+                },
+                null,
+                null,
+                {
+                  "py/tuple": [
+                    {
+                      "py/tuple": [
+                        "ListCertificateAuthorities",
+                        {
+                          "py/reduce": [
+                            {
+                              "py/type": "collections.OrderedDict"
+                            },
+                            {
+                              "py/tuple": []
+                            },
+                            null,
+                            null,
+                            {
+                              "py/tuple": [
+                                {
+                                  "py/tuple": [
+                                    "input_token",
+                                    "NextToken"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "limit_key",
+                                    "MaxResults"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "output_token",
+                                    "NextToken"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "result_key",
+                                    "CertificateAuthorities"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "py/tuple": [
+                        "ListTags",
+                        {
+                          "py/reduce": [
+                            {
+                              "py/type": "collections.OrderedDict"
+                            },
+                            {
+                              "py/tuple": []
+                            },
+                            null,
+                            null,
+                            {
+                              "py/tuple": [
+                                {
+                                  "py/tuple": [
+                                    "input_token",
+                                    "NextToken"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "limit_key",
+                                    "MaxResults"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "output_token",
+                                    "NextToken"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "result_key",
+                                    "Tags"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "py/tuple": [
+                        "ListPermissions",
+                        {
+                          "py/reduce": [
+                            {
+                              "py/type": "collections.OrderedDict"
+                            },
+                            {
+                              "py/tuple": []
+                            },
+                            null,
+                            null,
+                            {
+                              "py/tuple": [
+                                {
+                                  "py/tuple": [
+                                    "input_token",
+                                    "NextToken"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "limit_key",
+                                    "MaxResults"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "output_token",
+                                    "NextToken"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "result_key",
+                                    "Permissions"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "py/object": "botocore.paginate.PaginatorModel"
+          }
+        ]
+      },
+      "kwargs": {},
+      "return_value": "    class ListCertificateAuthoritiesPaginator(Paginator):\n        def wait(self, **kwargs):\n            r\"\"\"see function `list_certificate_authorities` for valid parameters\"\"\"\n            pass\n    class ListTagsPaginator(Paginator):\n        def wait(self, **kwargs):\n            r\"\"\"see function `list_tags` for valid parameters\"\"\"\n            pass\n    class ListPermissionsPaginator(Paginator):\n        def wait(self, **kwargs):\n            r\"\"\"see function `list_permissions` for valid parameters\"\"\"\n            pass\n\n"
+    },
+    {
+      "args": {
+        "py/tuple": [
+          {
+            "_paginator_config": {
+              "py/reduce": [
+                {
+                  "py/type": "collections.OrderedDict"
+                },
+                {
+                  "py/tuple": []
+                },
+                null,
+                null,
+                {
+                  "py/tuple": [
+                    {
+                      "py/tuple": [
+                        "ListSkills",
+                        {
+                          "py/reduce": [
+                            {
+                              "py/type": "collections.OrderedDict"
+                            },
+                            {
+                              "py/tuple": []
+                            },
+                            null,
+                            null,
+                            {
+                              "py/tuple": [
+                                {
+                                  "py/tuple": [
+                                    "result_key",
+                                    "SkillSummaries"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "output_token",
+                                    "NextToken"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "input_token",
+                                    "NextToken"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "limit_key",
+                                    "MaxResults"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "py/tuple": [
+                        "SearchUsers",
+                        {
+                          "py/reduce": [
+                            {
+                              "py/type": "collections.OrderedDict"
+                            },
+                            {
+                              "py/tuple": []
+                            },
+                            null,
+                            null,
+                            {
+                              "py/tuple": [
+                                {
+                                  "py/tuple": [
+                                    "result_key",
+                                    "Users"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "output_token",
+                                    "NextToken"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "input_token",
+                                    "NextToken"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "limit_key",
+                                    "MaxResults"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "py/tuple": [
+                        "ListTags",
+                        {
+                          "py/reduce": [
+                            {
+                              "py/type": "collections.OrderedDict"
+                            },
+                            {
+                              "py/tuple": []
+                            },
+                            null,
+                            null,
+                            {
+                              "py/tuple": [
+                                {
+                                  "py/tuple": [
+                                    "result_key",
+                                    "Tags"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "output_token",
+                                    "NextToken"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "input_token",
+                                    "NextToken"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "limit_key",
+                                    "MaxResults"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "py/tuple": [
+                        "SearchProfiles",
+                        {
+                          "py/reduce": [
+                            {
+                              "py/type": "collections.OrderedDict"
+                            },
+                            {
+                              "py/tuple": []
+                            },
+                            null,
+                            null,
+                            {
+                              "py/tuple": [
+                                {
+                                  "py/tuple": [
+                                    "result_key",
+                                    "Profiles"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "output_token",
+                                    "NextToken"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "input_token",
+                                    "NextToken"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "limit_key",
+                                    "MaxResults"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "py/tuple": [
+                        "SearchSkillGroups",
+                        {
+                          "py/reduce": [
+                            {
+                              "py/type": "collections.OrderedDict"
+                            },
+                            {
+                              "py/tuple": []
+                            },
+                            null,
+                            null,
+                            {
+                              "py/tuple": [
+                                {
+                                  "py/tuple": [
+                                    "result_key",
+                                    "SkillGroups"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "output_token",
+                                    "NextToken"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "input_token",
+                                    "NextToken"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "limit_key",
+                                    "MaxResults"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "py/tuple": [
+                        "SearchDevices",
+                        {
+                          "py/reduce": [
+                            {
+                              "py/type": "collections.OrderedDict"
+                            },
+                            {
+                              "py/tuple": []
+                            },
+                            null,
+                            null,
+                            {
+                              "py/tuple": [
+                                {
+                                  "py/tuple": [
+                                    "result_key",
+                                    "Devices"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "output_token",
+                                    "NextToken"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "input_token",
+                                    "NextToken"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "limit_key",
+                                    "MaxResults"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "py/tuple": [
+                        "SearchRooms",
+                        {
+                          "py/reduce": [
+                            {
+                              "py/type": "collections.OrderedDict"
+                            },
+                            {
+                              "py/tuple": []
+                            },
+                            null,
+                            null,
+                            {
+                              "py/tuple": [
+                                {
+                                  "py/tuple": [
+                                    "result_key",
+                                    "Rooms"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "output_token",
+                                    "NextToken"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "input_token",
+                                    "NextToken"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "limit_key",
+                                    "MaxResults"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "py/tuple": [
+                        "ListBusinessReportSchedules",
+                        {
+                          "py/reduce": [
+                            {
+                              "py/type": "collections.OrderedDict"
+                            },
+                            {
+                              "py/tuple": []
+                            },
+                            null,
+                            null,
+                            {
+                              "py/tuple": [
+                                {
+                                  "py/tuple": [
+                                    "input_token",
+                                    "NextToken"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "limit_key",
+                                    "MaxResults"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "output_token",
+                                    "NextToken"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "result_key",
+                                    "BusinessReportSchedules"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "py/tuple": [
+                        "ListConferenceProviders",
+                        {
+                          "py/reduce": [
+                            {
+                              "py/type": "collections.OrderedDict"
+                            },
+                            {
+                              "py/tuple": []
+                            },
+                            null,
+                            null,
+                            {
+                              "py/tuple": [
+                                {
+                                  "py/tuple": [
+                                    "input_token",
+                                    "NextToken"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "limit_key",
+                                    "MaxResults"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "output_token",
+                                    "NextToken"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "result_key",
+                                    "ConferenceProviders"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "py/tuple": [
+                        "ListDeviceEvents",
+                        {
+                          "py/reduce": [
+                            {
+                              "py/type": "collections.OrderedDict"
+                            },
+                            {
+                              "py/tuple": []
+                            },
+                            null,
+                            null,
+                            {
+                              "py/tuple": [
+                                {
+                                  "py/tuple": [
+                                    "input_token",
+                                    "NextToken"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "limit_key",
+                                    "MaxResults"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "output_token",
+                                    "NextToken"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "result_key",
+                                    "DeviceEvents"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "py/tuple": [
+                        "ListSkillsStoreCategories",
+                        {
+                          "py/reduce": [
+                            {
+                              "py/type": "collections.OrderedDict"
+                            },
+                            {
+                              "py/tuple": []
+                            },
+                            null,
+                            null,
+                            {
+                              "py/tuple": [
+                                {
+                                  "py/tuple": [
+                                    "input_token",
+                                    "NextToken"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "limit_key",
+                                    "MaxResults"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "output_token",
+                                    "NextToken"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "result_key",
+                                    "CategoryList"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "py/tuple": [
+                        "ListSkillsStoreSkillsByCategory",
+                        {
+                          "py/reduce": [
+                            {
+                              "py/type": "collections.OrderedDict"
+                            },
+                            {
+                              "py/tuple": []
+                            },
+                            null,
+                            null,
+                            {
+                              "py/tuple": [
+                                {
+                                  "py/tuple": [
+                                    "input_token",
+                                    "NextToken"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "limit_key",
+                                    "MaxResults"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "output_token",
+                                    "NextToken"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "result_key",
+                                    "SkillsStoreSkills"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "py/tuple": [
+                        "ListSmartHomeAppliances",
+                        {
+                          "py/reduce": [
+                            {
+                              "py/type": "collections.OrderedDict"
+                            },
+                            {
+                              "py/tuple": []
+                            },
+                            null,
+                            null,
+                            {
+                              "py/tuple": [
+                                {
+                                  "py/tuple": [
+                                    "input_token",
+                                    "NextToken"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "limit_key",
+                                    "MaxResults"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "output_token",
+                                    "NextToken"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "result_key",
+                                    "SmartHomeAppliances"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "py/object": "botocore.paginate.PaginatorModel"
+          }
+        ]
+      },
+      "kwargs": {},
+      "return_value": "    class ListSkillsPaginator(Paginator):\n        def wait(self, **kwargs):\n            r\"\"\"see function `list_skills` for valid parameters\"\"\"\n            pass\n    class SearchUsersPaginator(Paginator):\n        def wait(self, **kwargs):\n            r\"\"\"see function `search_users` for valid parameters\"\"\"\n            pass\n    class ListTagsPaginator(Paginator):\n        def wait(self, **kwargs):\n            r\"\"\"see function `list_tags` for valid parameters\"\"\"\n            pass\n    class SearchProfilesPaginator(Paginator):\n        def wait(self, **kwargs):\n            r\"\"\"see function `search_profiles` for valid parameters\"\"\"\n            pass\n    class SearchSkillGroupsPaginator(Paginator):\n        def wait(self, **kwargs):\n            r\"\"\"see function `search_skill_groups` for valid parameters\"\"\"\n            pass\n    class SearchDevicesPaginator(Paginator):\n        def wait(self, **kwargs):\n            r\"\"\"see function `search_devices` for valid parameters\"\"\"\n            pass\n    class SearchRoomsPaginator(Paginator):\n        def wait(self, **kwargs):\n            r\"\"\"see function `search_rooms` for valid parameters\"\"\"\n            pass\n    class ListBusinessReportSchedulesPaginator(Paginator):\n        def wait(self, **kwargs):\n            r\"\"\"see function `list_business_report_schedules` for valid parameters\"\"\"\n            pass\n    class ListConferenceProvidersPaginator(Paginator):\n        def wait(self, **kwargs):\n            r\"\"\"see function `list_conference_providers` for valid parameters\"\"\"\n            pass\n    class ListDeviceEventsPaginator(Paginator):\n        def wait(self, **kwargs):\n            r\"\"\"see function `list_device_events` for valid parameters\"\"\"\n            pass\n    class ListSkillsStoreCategoriesPaginator(Paginator):\n        def wait(self, **kwargs):\n            r\"\"\"see function `list_skills_store_categories` for valid parameters\"\"\"\n            pass\n    class ListSkillsStoreSkillsByCategoryPaginator(Paginator):\n        def wait(self, **kwargs):\n            r\"\"\"see function `list_skills_store_skills_by_category` for valid parameters\"\"\"\n            pass\n    class ListSmartHomeAppliancesPaginator(Paginator):\n        def wait(self, **kwargs):\n            r\"\"\"see function `list_smart_home_appliances` for valid parameters\"\"\"\n            pass\n\n"
+    },
+    {
+      "args": {
+        "py/tuple": [
+          {
+            "_paginator_config": {
+              "py/reduce": [
+                {
+                  "py/type": "collections.OrderedDict"
+                },
+                {
+                  "py/tuple": []
+                },
+                null,
+                null,
+                {
+                  "py/tuple": [
+                    {
+                      "py/tuple": [
+                        "ListApps",
+                        {
+                          "py/reduce": [
+                            {
+                              "py/type": "collections.OrderedDict"
+                            },
+                            {
+                              "py/tuple": []
+                            },
+                            null,
+                            null,
+                            {
+                              "py/tuple": [
+                                {
+                                  "py/tuple": [
+                                    "input_token",
+                                    "nextToken"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "limit_key",
+                                    "maxResults"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "output_token",
+                                    "nextToken"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "result_key",
+                                    "apps"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "py/tuple": [
+                        "ListBranches",
+                        {
+                          "py/reduce": [
+                            {
+                              "py/type": "collections.OrderedDict"
+                            },
+                            {
+                              "py/tuple": []
+                            },
+                            null,
+                            null,
+                            {
+                              "py/tuple": [
+                                {
+                                  "py/tuple": [
+                                    "input_token",
+                                    "nextToken"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "limit_key",
+                                    "maxResults"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "output_token",
+                                    "nextToken"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "result_key",
+                                    "branches"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "py/tuple": [
+                        "ListDomainAssociations",
+                        {
+                          "py/reduce": [
+                            {
+                              "py/type": "collections.OrderedDict"
+                            },
+                            {
+                              "py/tuple": []
+                            },
+                            null,
+                            null,
+                            {
+                              "py/tuple": [
+                                {
+                                  "py/tuple": [
+                                    "input_token",
+                                    "nextToken"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "limit_key",
+                                    "maxResults"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "output_token",
+                                    "nextToken"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "result_key",
+                                    "domainAssociations"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "py/tuple": [
+                        "ListJobs",
+                        {
+                          "py/reduce": [
+                            {
+                              "py/type": "collections.OrderedDict"
+                            },
+                            {
+                              "py/tuple": []
+                            },
+                            null,
+                            null,
+                            {
+                              "py/tuple": [
+                                {
+                                  "py/tuple": [
+                                    "input_token",
+                                    "nextToken"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "limit_key",
+                                    "maxResults"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "output_token",
+                                    "nextToken"
+                                  ]
+                                },
+                                {
+                                  "py/tuple": [
+                                    "result_key",
+                                    "jobSummaries"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "py/object": "botocore.paginate.PaginatorModel"
+          }
+        ]
+      },
+      "kwargs": {},
+      "return_value": "    class ListAppsPaginator(Paginator):\n        def wait(self, **kwargs):\n            r\"\"\"see function `list_apps` for valid parameters\"\"\"\n            pass\n    class ListBranchesPaginator(Paginator):\n        def wait(self, **kwargs):\n            r\"\"\"see function `list_branches` for valid parameters\"\"\"\n            pass\n    class ListDomainAssociationsPaginator(Paginator):\n        def wait(self, **kwargs):\n            r\"\"\"see function `list_domain_associations` for valid parameters\"\"\"\n            pass\n    class ListJobsPaginator(Paginator):\n        def wait(self, **kwargs):\n            r\"\"\"see function `list_jobs` for valid parameters\"\"\"\n            pass\n\n"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "class": null,
+  "function": {
+    "py/function": "main.print_resource"
+  },
+  "module": {
+    "py/repr": "main/main"
+  },
+  "test_cases": [
+    {
+      "args": {
+        "py/tuple": [
+          "accessanalyzer"
+        ]
+      },
+      "kwargs": {},
+      "return_value": ""
+    },
+    {
+      "args": {
+        "py/tuple": [
+          "acm"
+        ]
+      },
+      "kwargs": {},
+      "return_value": ""
+    },
+    {
+      "args": {
+        "py/tuple": [
+          "acm-pca"
+        ]
+      },
+      "kwargs": {},
+      "return_value": ""
+    },
+    {
+      "args": {
+        "py/tuple": [
+          "alexaforbusiness"
+        ]
+      },
+      "kwargs": {},
+      "return_value": ""
+    },
+    {
+      "args": {
+        "py/tuple": [
+          "amplify"
+        ]
+      },
+      "kwargs": {},
+      "return_value": ""
+    }
+  ]
+}
