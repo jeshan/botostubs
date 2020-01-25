@@ -30,7 +30,7 @@ def get_method_signature(service_model, operation_name, shapes, class_name):
     param_str = ', '.join(param_list)
 
     operation_doc = operation_model.documentation.replace('<p>', '').replace('</p>', '')
-    docstr = f'"""{operation_doc}\n'
+    docstr = f'r"""{operation_doc}\n'
     append_return_type = ' -> ' + output_shape.name if output_shape else ''
     rest_params = f":param {get_doc_str(input_shape)}"
 
@@ -109,7 +109,7 @@ def get_class_signature(client_name, name, documentation, methods, shapes_in_cla
     method_str = '\n\n'.join(methods)
     shape_str = get_shape_str(name, shapes_in_classes)
     resource_str = print_resource(client_name)
-    doc_str = f'    """{documentation}"""'.replace('<p>', '').replace('</p>', '')
+    doc_str = f'    r"""{documentation}"""'.replace('<p>', '').replace('</p>', '')
     waiter_str = get_waiter_str(waiter_model)
     paginator_str = get_paginator_str(paginator_model)
 
@@ -145,7 +145,7 @@ def get_waiter_str(waiter_model):
         return value
     for name in waiter_model.waiter_names:
         waiter = waiter_model.get_waiter(name)
-        wait_docstr = f'"""see function `{pythonic.xform_name(waiter.operation)}` for valid parameters"""'
+        wait_docstr = f'r"""see function `{pythonic.xform_name(waiter.operation)}` for valid parameters"""'
         value += f"""    class {name}Waiter(Waiter):
         def wait(self, **kwargs):
             {wait_docstr}
@@ -160,7 +160,7 @@ def get_paginator_str(paginator_model):
     if not paginator_model:
         return value
     for name, paginator in paginator_model._paginator_config.items():
-        wait_docstr = f'"""see function `{pythonic.xform_name(name)}` for valid parameters"""'
+        wait_docstr = f'r"""see function `{pythonic.xform_name(name)}` for valid parameters"""'
         value += f"""    class {name}Paginator(Paginator):
         def wait(self, **kwargs):
             {wait_docstr}
@@ -241,7 +241,7 @@ def print_sub_resource(resource_name, resource, sub_resource):
             type_shape = value[1]
             attributes_doc += get_param_name(type_shape, key, type_shape, shape_classes, resource_name) + f"""
             """
-    resource_doc = f'"""{inspect.getdoc(attr)}"""'
+    resource_doc = f'r"""{inspect.getdoc(attr)}"""'
     params_str = ''
     if len(params):
         params_str = ', ' + ', '.join(params)
