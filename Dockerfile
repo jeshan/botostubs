@@ -10,7 +10,7 @@ COPY Pipfile* ./
 
 RUN pipenv install --system
 
-RUN pipenv update boto3
+RUN pip install --upgrade boto3
 
 COPY test-data test-data
 COPY post-release-data.py test_pytestcleanup_cases.py conftest.py pythonic.py main.py release.sh README.md setup.py ./
