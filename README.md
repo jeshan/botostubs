@@ -49,6 +49,10 @@ Support python versions before 3.5. Currently requires at least 3.5 due to use o
 Deploy the pipeline in your AWS account by clicking this button:
 <a href="https://console.aws.amazon.com/cloudformation/home?#/stacks/new?&templateURL=https://s3.amazonaws.com/jeshan-oss-public-files/deployment-pipeline.yaml" target="_blank"><img src="https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png"></a>
 
+This is how it looks like:
+
+![stack](/stack.png)
+
 ## Manual Releasing on pypi
 - `docker-compose build`
 - `docker-compose run python`. Enter credentials when prompted
