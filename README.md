@@ -53,7 +53,7 @@ This is how it looks like:
 
 ![stack](/stack.png)
 
-*Image generated with [cfnbuddy](https://www.cfnbuddy.com)*
+*Image automatically generated with [cfnbuddy](https://www.cfnbuddy.com)*
 
 ## Manual Releasing on pypi
 - `docker-compose build`
