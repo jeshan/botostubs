@@ -4,7 +4,7 @@ env:
   variables:
     DOCKER_HUB_USERNAME: jeshan
   parameter-store:
-    DOCKER_HUB_PASSWORD: dockerhub-password
+    DOCKER_HUB_PASSWORD: /CodeBuild/dockerhub-password
     TWINE_USERNAME: /CodeBuild/pypi-user
     TWINE_PASSWORD: /CodeBuild/pypi-password
     GITHUB_TOKEN: /CodeBuild/GITHUB_TOKEN
