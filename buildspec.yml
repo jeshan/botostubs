@@ -1,7 +1,10 @@
 version: 0.2
 
 env:
+  variables:
+    DOCKER_HUB_USERNAME: jeshan
   parameter-store:
+    DOCKER_HUB_PASSWORD: dockerhub-password
     TWINE_USERNAME: /CodeBuild/pypi-user
     TWINE_PASSWORD: /CodeBuild/pypi-password
     GITHUB_TOKEN: /CodeBuild/GITHUB_TOKEN
@@ -9,4 +12,5 @@ env:
 phases:
   build:
     commands:
+      - docker login -u $DOCKER_HUB_USERNAME -p $DOCKER_HUB_PASSWORD
       - docker-compose run -e TWINE_USERNAME=$TWINE_USERNAME -e TWINE_PASSWORD=$TWINE_PASSWORD -e GITHUB_TOKEN=$GITHUB_TOKEN release
