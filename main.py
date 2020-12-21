@@ -1,6 +1,11 @@
 import keyword
 
 import boto3
+from boto3.dynamodb.table import register_table_methods
+from boto3.ec2.deletetags import delete_tags
+from boto3.s3.inject import inject_bucket_methods, inject_object_methods, inject_object_summary_methods, \
+    inject_s3_transfer_methods
+
 import botocore
 from botocore.waiter import WaiterModel
 import inspect
@@ -253,7 +258,7 @@ def print_sub_resource(resource_name, resource, sub_resource):
                 pass
             
 {get_shape_str(resource_name, shape_classes)}        {attributes_doc}
-{print_sub_waiters(sub_resource)}{print_sub_actions(sub_resource.resource.model.actions)}
+{print_sub_waiters(sub_resource)}{print_sub_actions(sub_resource.resource.model.actions)}{print_injected_resource_methods(resource_name, sub_resource)}
 """
 
 
@@ -283,6 +288,56 @@ def print_sub_actions(actions):
     return result
 
 
+def add_injected_client_methods(client_name, method_signatures):
+    resource_fns = {'s3': inject_s3_transfer_methods}
+    fn = resource_fns.get(client_name)
+    result = print_injected_functions(fn, {})
+    method_signatures.append(result)
+
+
+def print_injected_resource_methods(resource_name, sub_resource):
+    s3_fns = {'Bucket': inject_bucket_methods, 'Object': inject_object_methods,
+              'ObjectSummary': inject_object_summary_methods}
+    if resource_name == 'dynamodb':
+        base_classes = []
+        register_table_methods(base_classes)
+        methods = {}
+        for clazz in base_classes:
+            new_methods = {method_name: getattr(clazz, method_name) for method_name in dir(clazz) if
+                           not method_name.startswith('__')}
+            methods.update(new_methods)
+        return print_injected_functions(None, methods)
+    if resource_name == 'ec2':
+        return print_injected_functions(None, {'delete_tags': delete_tags})
+    if resource_name == 's3':
+        fn = s3_fns.get(sub_resource.name)
+        return print_injected_functions(fn, {})
+    return ''
+
+
+def print_injected_functions(fn, methods):
+    if fn:
+        fn(methods)
+    result = ''
+    for name, method in methods.items():
+        got_doc = inspect.getdoc(method)
+        doc = ''
+        if got_doc:
+            doc = '\"\"\"{0}\"\"\"'.format(got_doc)
+        signature = inspect.signature(method)
+        parameters = signature.parameters
+        param_str = ''
+        for param_name, param in parameters.items():
+            param_str += str(param) + ', '
+        param_str = param_str[:-2]
+        result += f"""    def {name}({param_str}):
+        {doc}
+        pass
+
+"""
+    return result
+
+
 def get_class_output(client_name):
     method_signatures = []
     shapes_in_classes = []
@@ -297,6 +352,7 @@ def get_class_output(client_name):
         paginator_model = None # meaning it probably doesn't have paginators
     for name in service_model.operation_names:
         method_signatures.append(get_method_signature(service_model, name, shapes_in_classes, class_name))
+    add_injected_client_methods(client_name, method_signatures)
     return get_class_signature(client_name, class_name, service_model.documentation, method_signatures,
                                shapes_in_classes, waiter_model, paginator_model)
 
