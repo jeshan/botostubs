@@ -291,7 +291,7 @@ def print_sub_actions(actions):
 def add_injected_client_methods(client_name, method_signatures):
     resource_fns = {'s3': inject_s3_transfer_methods}
     fn = resource_fns.get(client_name)
-    result = print_injected_functions(fn, {})
+    result = print_injected_functions(fn, {}, 4)
     method_signatures.append(result)
 
 
@@ -306,19 +306,20 @@ def print_injected_resource_methods(resource_name, sub_resource):
             new_methods = {method_name: getattr(clazz, method_name) for method_name in dir(clazz) if
                            not method_name.startswith('__')}
             methods.update(new_methods)
-        return print_injected_functions(None, methods)
+        return print_injected_functions(None, methods, 12)
     if resource_name == 'ec2':
-        return print_injected_functions(None, {'delete_tags': delete_tags})
+        return print_injected_functions(None, {'delete_tags': delete_tags}, 8)
     if resource_name == 's3':
         fn = s3_fns.get(sub_resource.name)
-        return print_injected_functions(fn, {})
+        return print_injected_functions(fn, {}, 12)
     return ''
 
 
-def print_injected_functions(fn, methods):
+def print_injected_functions(fn, methods, spaces):
     if fn:
         fn(methods)
     result = ''
+    indent = spaces * ' '
     for name, method in methods.items():
         got_doc = inspect.getdoc(method)
         doc = ''
@@ -330,9 +331,9 @@ def print_injected_functions(fn, methods):
         for param_name, param in parameters.items():
             param_str += str(param) + ', '
         param_str = param_str[:-2]
-        result += f"""    def {name}({param_str}):
-        {doc}
-        pass
+        result += f"""{indent}def {name}({param_str}):
+    {indent}{doc}
+    {indent}pass
 
 """
     return result
