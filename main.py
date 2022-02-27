@@ -184,7 +184,7 @@ def print_resource(resource_name):
     for sub_resource in resource.meta.resource_model.subresources:
         result += print_sub_resource(resource_name, resource, sub_resource)
     result += print_actions(resource.meta.resource_model.actions)
-    result += print_collections(resource)
+    result += print_collections(resource.meta.resource_model, 2)
     result += '\n\n'
     return result
 
@@ -200,17 +200,14 @@ def print_sub_waiters(resource):
     return result
 
 
-def print_collections(resource):
+def print_collections(model, count):
     result = ''
-    for collection in resource.meta.resource_model.collections:
-        item_type = collection.resource.type
-        if resource.meta.service_name == 'ec2' and item_type == 'KeyPairInfo':
-            item_type = 'KeyPair'
-        result += f"""        class {collection.resource.type}ResourceCollection(List[{item_type}], ResourceCollection):
-            pass
+    for collection in model.collections:
+        result += f"""{'    ' * count}class {collection.resource.type}ResourceCollection(List, ResourceCollection):
+{'    ' * (count + 1)}pass
 
 """
-        result += f"""        {collection.name}: {collection.resource.type}ResourceCollection = None
+        result += f"""{'    ' * count}{collection.name}: {collection.resource.type}ResourceCollection = None
 """
     return result
 
@@ -259,6 +256,7 @@ def print_sub_resource(resource_name, resource, sub_resource):
             
 {get_shape_str(resource_name, shape_classes)}        {attributes_doc}
 {print_sub_waiters(sub_resource)}{print_sub_actions(sub_resource.resource.model.actions)}{print_injected_resource_methods(resource_name, sub_resource)}
+{print_collections(sub_resource.resource.model, 3)}
 """
 
 
