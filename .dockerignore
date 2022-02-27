@@ -1,0 +1,6 @@
+*
+!Pipfile*
+!test-data
+!*.py
+!*.md
+!*.sh
